@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   get 'users/dashboard'
   get 'users/show'
+  get 'users/index'
   get 'static_pages/home'
   get 'static_pages/data_tables'
   get 'static_pages/services'
