@@ -1,0 +1,130 @@
+<div class="container">
+<nav>
+<ul class="breadcrumb">
+  <li><%= link_to "Home", static_pages_data_tables_path %></li>
+</ul>
+</nav>
+<center><h3>Add new Offshore field</h3></center>
+
+<center><font color="red">All fields marked * are required fields</font></center>
+<div class="row">
+    
+  <div class="col-md-8 col-md-offset-3">
+     
+    
+    <br>
+      <%= form_for  @offshore  do |f| %>
+        <%= render 'shared/error_message', object: @offshore%>
+      <div class="row">
+       
+       <div class="col-md-6 col-md-offset-2">
+         <%= f.label :Field_name%><font color="red">*</font>
+         <%= f.text_field  :field_name,  class: 'form-control' %> 
+         
+       </div>
+       
+       
+       <div class="col-md-6 col-md-offset-2">
+         <%= f.label :Status%><font color="red">*</font>
+         <%= f.text_field  :status , class: 'form-control' %> 
+         
+       </div>
+       
+        <div class="col-md-6 col-md-offset-2">
+         <%= f.label :Country%><font color="red">*</font>
+         <%= f.text_field  :country, class: 'form-control' %> 
+         
+       </div>
+       
+       
+        <div class="col-md-6 col-md-offset-2">
+         <%= f.label :Original_operator%><font color="red">*</font>
+         <%= f.text_field  :original_operator, class: 'form-control' %> 
+         
+       </div>
+       
+      
+        <div class="col-md-6 col-md-offset-2">
+         <%= f.label :Stakeholders%><font color="red">*</font>
+         <%= f.text_field  :stakeholders, class: 'form-control' %> 
+         
+       </div>
+       
+       
+        <div class="col-md-6 col-md-offset-2">
+         <%= f.label :Discovery_year%><font color="red">*</font>
+         <%= f.text_field  :discovery_yr , class: 'form-control' %> 
+         
+       </div>
+       
+       
+        <div class="col-md-6 col-md-offset-2">
+         <%= f.label :Resource%><font color="red">*</font>
+         <%= f.text_field  :resource , class: 'form-control' %> 
+         
+       </div>
+       
+        <div class="col-md-6 col-md-offset-2">
+         <%= f.label :Field_Size_Boe%><font color="red">*</font>
+         <%= f.text_field  :field_size_boe , class: 'form-control' %> 
+         
+       </div>
+       
+        <div class="col-md-6 col-md-offset-2">
+         <%= f.label :First_Production_Year%><font color="red">*</font>
+         <%= f.text_field  :first_production_yr , class: 'form-control' %> 
+         
+       </div>
+       
+        <div class="col-md-6 col-md-offset-2">
+         <%= f.label :Estimated_End_Production%><font color="red">*</font>
+         <%= f.text_field  :estimated_end_production  , class: 'form-control' %> 
+         
+       </div>
+       
+       <div class="col-md-6 col-md-offset-2">
+         <%= f.label :Field_Life_years%><font color="red">*</font>
+         <%= f.text_field  :field_life_yrs , class: 'form-control' %> 
+         
+       </div>
+       
+       <div class="col-md-6 col-md-offset-2">
+         <%= f.label :Water_depth%><font color="red">*</font>
+         <%= f.text_field  :water_depth  , class: 'form-control' %> 
+         
+       </div>
+       
+       <div class="col-md-6 col-md-offset-2">
+         <%= f.label :Capex_USD%><font color="red">*</font>
+         <%= f.text_field  :capex_usd , class: 'form-control' %> 
+         
+       </div>
+       
+       <div class="col-md-6 col-md-offset-2">
+         <%= f.label :Distance_to_Shore_km%><font color="red">*</font>
+         <%= f.text_field  :distance_to_shore_km , class: 'form-control' %> 
+         
+       </div>
+       
+       <div class="col-md-6 col-md-offset-2">
+         <%= f.label :No_of_Manifolds%><font color="red">*</font>
+         <%= f.text_field  :no_manifolds  , class: 'form-control' %> 
+         
+       </div>
+       
+       <div class="col-md-6 col-md-offset-2">
+         <%= f.label :No_of_Installed_trees%><font color="red">*</font>
+         <%= f.text_field  :no_installed_trees  , class: 'form-control' %> 
+         
+       </div>
+       
+       
+       </div>
+       <br>
+      <div class="col-md-5 col-md-offset-4">
+      <%= f.submit "Add offshore field", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+  </div>
+  </div>

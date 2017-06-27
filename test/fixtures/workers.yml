@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  worker_id: 1
+  full_name: MyString
+  classification: MyString
+  company_type: MyString
+  ak_notes: MyText
+  current_company: MyText
+  current_country: MyString
+
+two:
+  worker_id: 1
+  full_name: MyString
+  classification: MyString
+  company_type: MyString
+  ak_notes: MyText
+  current_company: MyText
+  current_country: MyString

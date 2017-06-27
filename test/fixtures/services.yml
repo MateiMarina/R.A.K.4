@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  service_company_id: 1
+  service_company_name: MyString
+  country: MyText
+  address: MyString
+  year_formed: 1
+  other_operational_countries: MyString
+  about_company: MyString
+  current_focus: MyString
+  services: MyString
+  estimated_booking: MyString
+  financial_status: MyText
+
+two:
+  service_company_id: 1
+  service_company_name: MyString
+  country: MyText
+  address: MyString
+  year_formed: 1
+  other_operational_countries: MyString
+  about_company: MyString
+  current_focus: MyString
+  services: MyString
+  estimated_booking: MyString
+  financial_status: MyText

@@ -1,0 +1,35 @@
+<div class="container">
+<nav>
+<ul class="breadcrumb">
+  <li><%= link_to "Home",  static_pages_data_tables_path %></li>
+  <li><%= link_to "Add new person", new_worker_path  %></li>
+</ul>
+</nav>
+              
+                      
+<div class="page-header"><h3>Company People</h3></div>
+<div class="span3">
+<table align="" border="1px" class="table table-striped">
+   <th>Full Name</th>
+    <th>Classification</th>
+     <th>Company Type</th>
+      <th>Ak_Notes</th>
+       <th>Current Company</th>
+         <th>Current Country</th>
+          <th>Edit</th>
+         <th>Delete</th>
+<% @workers.each do |worker| %>
+ 
+   <tr><td><%= worker.full_name%></td>
+            <td><%=worker.classification%></td>
+            <td><%= worker.company_type %></td>
+              <td><%= worker.ak_notes%></td>
+            <td><%= worker.current_company %></td>
+                <td><%= worker.current_country %></td>
+         <td><%= link_to "Edit", edit_worker_path(worker),data: { confirm: " Are you Sure you want to edit?" }   %></td>
+          <td><%= link_to "Delete", worker_path(worker), method: :delete,
+          data: { confirm: " Are You sure you want to Delete?" } %></td></tr>   
+ <% end %>
+    </table>
+    
+    </div>

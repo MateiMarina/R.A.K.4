@@ -1,0 +1,94 @@
+<div class="container">
+<nav>
+<ul class="breadcrumb">
+  <li><%= link_to "Home", static_pages_data_tables_path %></li>
+</ul>
+</nav>
+<center><h3>Edit Operating Company record</h3></center>
+<center><font color="red">All fields marked * are required fields</font></center>
+<div class="row">
+    
+  <div class="col-md-8 col-md-offset-3">
+     
+    
+    <br>
+      <%= form_for  @operating  do |f| %>
+       
+      <div class="row">
+       
+       <div class="col-md-6 col-md-offset-2">
+         <%= f.label :Company_Name%><font color="red">*</font>
+         <%= f.text_field  :operating_company_name,  class: 'form-control' %> 
+         
+       </div>
+       
+       
+       <div class="col-md-6 col-md-offset-2">
+         <%= f.label :Country%><font color="red">*</font>
+         <%= f.text_field  :country, class: 'form-control' %> 
+         
+       </div>
+       
+       
+        <div class="col-md-6 col-md-offset-2">
+         <%= f.label :Address%><font color="red">*</font>
+         <%= f.text_field  :address, class: 'form-control' %> 
+         
+       </div>
+       
+       
+        <div class="col-md-6 col-md-offset-2">
+         <%= f.label :Year_formed%><font color="red">*</font>
+         <%= f.date_field  :year_formed , class: 'form-control' %> 
+         
+       </div>
+       
+       
+       
+        <div class="col-md-6 col-md-offset-2">
+         <%= f.label :Other_operational_countries%><font color="red">*</font>
+         <%= f.text_field  :other_operational_countries , class: 'form-control' %> 
+         
+       </div>
+       
+       
+        <div class="col-md-6 col-md-offset-2">
+         <%= f.label :About_company%><font color="red">*</font>
+         <%= f.text_field  :about_company , class: 'form-control' %> 
+         
+       </div>
+       
+       
+        <div class="col-md-6 col-md-offset-2">
+         <%= f.label :Current_focus%><font color="red">*</font>
+         <%= f.text_field  :current_focus , class: 'form-control' %> 
+         
+       </div>
+       
+        <div class="col-md-6 col-md-offset-2">
+         <%= f.label :Incumbent_IRM_contractor%><font color="red">*</font>
+         <%= f.text_field  :incumbent_irm_contractor , class: 'form-control' %> 
+         
+       </div>
+       
+        <div class="col-md-6 col-md-offset-2">
+         <%= f.label :IRM_frame_agreements%><font color="red">*</font>
+         <%= f.text_field  :irm_frame_agreements , class: 'form-control' %> 
+         
+       </div>
+       
+        <div class="col-md-6 col-md-offset-2">
+         <%= f.label :Estimated_IRM_budgets%><font color="red">*</font>
+         <%= f.text_field  :estimated_irm_budgets  , class: 'form-control' %> 
+         
+       </div>
+       
+       
+       </div>
+       <br>
+      <div class="col-md-5 col-md-offset-4">
+      <%= f.submit "Update", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+  </div>

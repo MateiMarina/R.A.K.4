@@ -1,0 +1,45 @@
+<div class="container">
+<nav>
+<ul class="breadcrumb">
+  <li><%= link_to "Home",  static_pages_data_tables_path %></li>
+  <li><%= link_to "Add new service company", new_service_path  %></li>
+</ul>
+</nav>
+              
+                      
+<div class="page-header"><h3>Subsea Service Companies</h3></div>
+<div class="span3">
+<table align="" border="1px" class="table table-striped">
+<th>Company Name</th>
+    <th>Location</th>
+     <th>Address</th>
+      <th>Year formed</th>
+       <th>Other operational countries</th>
+        <th>About company</th>
+         <th>Current focus</th>
+        <th>Services</th>
+        <th>Estimated Booking</th>
+         <th>Financial Status</th>
+          <th>Edit</th>
+           <th>Delete</th>
+
+<% @service.each do |service| %>
+
+  <tr><td><%= service.service_company_name%></td>
+      <td><%= service.country%></td>
+       <td><%= service.address%></td>
+         <td><%= service.year_formed%></td>
+          <td><%= service.other_operational_countries%></td>
+           <td><%= service.about_company%></td>
+            <td><%= service.current_focus%></td>
+             <td><%= service.services%></td>
+              <td><%= service.estimated_booking %></td>
+               <td><%= service.financial_status %></td> 
+   <td><%= link_to "Edit", edit_service_path(service),data: { confirm: " Are you Sure you want to edit?" }  %></td>
+   <td><%= link_to "Delete", service_path(service), method: :delete,
+          data: { confirm: " Are You sure you want to Delet?" } %></td></tr> 
+         
+<% end %>
+</table>
+</div>
+</div>

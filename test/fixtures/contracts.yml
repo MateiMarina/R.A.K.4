@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  contract_id: 1
+  contract: MyString
+  name: MyString
+  contract_status: MyString
+  country: MyString
+  purchaser_id: 1
+  operating_company_id: 1
+  service: MyString
+  company_id: 1
+  services_rendered: MyString
+  contract_value: MyString
+  award_year: 1
+
+two:
+  contract_id: 1
+  contract: MyString
+  name: MyString
+  contract_status: MyString
+  country: MyString
+  purchaser_id: 1
+  operating_company_id: 1
+  service: MyString
+  company_id: 1
+  services_rendered: MyString
+  contract_value: MyString
+  award_year: 1

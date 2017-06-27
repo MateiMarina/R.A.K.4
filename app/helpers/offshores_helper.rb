@@ -1,0 +1,2 @@
+module OffshoresHelper
+end

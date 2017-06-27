@@ -1,0 +1,23 @@
+<div class="container">
+<nav>
+<ul class="breadcrumb">
+  <li><%= link_to "Home",  static_pages_data_tables_path %></li>
+</ul>
+</nav>
+              
+                      
+<div class="page-header"><h3>Offshore Energy Today News</h3></div>
+<div class="span3"> 
+<table align="center" width="800" cellpadding="10px">
+  <% @entriesArray.each do |row| %>
+  <tr><td>
+  <%= row.title %><br>
+  <a href='<%= row.link %>'><%= row.link %></a><br><br>
+  </td></tr>
+  
+<% end %>
+
+</table>
+</div>
+</div>
+

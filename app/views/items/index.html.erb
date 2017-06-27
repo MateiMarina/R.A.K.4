@@ -1,0 +1,42 @@
+<div class="container">
+<nav>
+
+<ul class="breadcrumb">
+  <li><%= link_to "Home",   static_pages_data_tables_path %></li>
+  <li><%= link_to "Add new asset", new_item_path  %></li>
+</ul>
+</nav>
+              
+                      
+<div class="page-header"><h3>Assets</h3></div>
+<div class="span3"> 
+<table align="" border="1px"  cellspacing="5px" class="table table-striped">
+   <th>Asset Name</th>
+    <th>Asset type</th>
+     <th>Asset owner</th>
+      <th>Country</th>
+       <th>Current manager</th>
+        <th>Previous manager</th>
+         <th>Asset specification</th>
+          <th>Edit</th>
+           <th>Delete</th>
+
+<% @asset.each do |item| %>
+ 
+   <tr><td><%= item.asset_name%></td>
+       <td><%= item.asset_type%></td>
+        <td><%= item.asset_owner%></td>
+          <td><%= item.country%></td>
+           <td><%= item.current_manager%></td>
+            <td><%= item.previous_manager%></td>
+             <td><%= item.asset_specifications%></td>
+
+           <td><%= link_to "Edit", edit_item_path(item),data: { confirm: " Are you Sure you want to edit?" }   %></td>
+          <td><%= link_to "Delete", item_path(item), method: :delete,
+          data: { confirm: " Are You sure you want to Delete?" } %></td></tr> 
+          
+ <% end %>
+    </table>
+    
+</div>
+</div>

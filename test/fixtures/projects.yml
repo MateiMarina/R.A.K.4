@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  project_id: 1
+  project_title: MyString
+  about_project: MyString
+  resource: MyString
+  status: MyString
+  estimated_first_production: MyText
+  country: MyString
+  region: MyString
+  water_depth_m: MyString
+  text: MyString
+  capex_usd: MyText
+  distance_to_shore: MyText
+  development_concept: MyText
+
+two:
+  project_id: 1
+  project_title: MyString
+  about_project: MyString
+  resource: MyString
+  status: MyString
+  estimated_first_production: MyText
+  country: MyString
+  region: MyString
+  water_depth_m: MyString
+  text: MyString
+  capex_usd: MyText
+  distance_to_shore: MyText
+  development_concept: MyText
