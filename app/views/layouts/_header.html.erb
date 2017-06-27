@@ -6,7 +6,7 @@
     
      <nav>
         <ul class="nav navbar-nav navbar-right h-d">
-       
+        
         <% if logged_in? %>
           <%#= form_tag(scraps_path, :method => "get", id: "search-form") do %>
             <%#= text_field_tag :search, params[:search], placeholder: "Search NEWS" %>
@@ -18,10 +18,12 @@
               Account <b class="caret"></b>
            </a>
             <ul class="dropdown-menu">
-              
+              <% if current_user.admin? %>
+                <li><%= link_to "Manage User Accounts", users_index_path, :class => 'navbar-link' %></a></li>
+              <% end %>
               <li><%= link_to "User Dashboard", users_dashboard_path, :class => 'navbar-link' %></a></li>
-              <li><%= link_to "User Profile", current_user %></a></li>
-             
+              <li><%= link_to "View User Profile", current_user %></a></li>
+              <li><%= link_to "Edit #{current_user.name}'s Profile", edit_user_path(current_user) %></a></li>
               <li><%= link_to "Data Tables", static_pages_data_tables_path, :class => 'navbar-link' %></a></li>
              <li class="divider">
              <li><%= link_to "Log out", logout_path, method: :delete, :class => 'navbar-link' %></a></li>

@@ -11,8 +11,12 @@
             <%#= text_field_tag :search, params[:search], placeholder: "Search NEWS" %>
             <%#= submit_tag "Search" %>
           <%# end %>
+              <% if current_user.admin? %>
+                <li><%= link_to "Manage User Accounts", users_index_path, :class => 'navbar-link' %></a></li>
+              <% end %>
               <li><%= link_to "User Dashboard", users_dashboard_path, :class => 'navbar-link' %></li>
-              <li><%= link_to "User Profile", current_user, :class => 'navbar-link' %></li>
+              <li><%= link_to "View User Profile", current_user, :class => 'navbar-link' %></li>
+              <li><%= link_to "Edit #{current_user.name}'s Profile", edit_user_path(current_user) %></li>
               <li><%= link_to "Data Tables", static_pages_data_tables_path, :class => 'navbar-link' %></li>
               <li><%= link_to "Logout", logout_path, method: :delete, :class => "navbar-link" %></li>
               <div class='row'>
