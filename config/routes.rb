@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
 
+  get 'users/dashboard'
   get 'users/show'
   get 'static_pages/home'
   get 'static_pages/data_tables'
@@ -14,8 +15,10 @@ Rails.application.routes.draw do
   get 'static_pages/contact'
   get 'static_pages/scrap_project'
 
+
   get  '/signup',  to: 'users#new'
   
+  post '/signup',  to: 'users#create'
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -30,4 +33,5 @@ Rails.application.routes.draw do
  resources :offshores,     :index, :show, :new, :create, :destroy
  resources :projects,      :index, :show, :new, :create, :destroy
  resources :contracts,     :index, :show, :new, :create, :destroy
+ resources :users
 end
