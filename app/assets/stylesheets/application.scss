@@ -4,58 +4,64 @@
  @import url('http://fonts.googleapis.com/css?family=Open+Sans:400,700');
  @import "bootstrap-sprockets";
  @import 'font-awesome';
- 
+
  /* universal */
- 
+
+ html {
+   position: relative;
+   min-height: 100%;
+ }
  body {
+   /* Margin bottom by footer height */
+   margin-bottom: 60px;
    padding-top: 60px;
  }
- 
+
  section {
    overflow: auto;
  }
- 
+
  textarea {
    resize: vertical;
  }
- 
+
  .center {
    text-align: center;
  }
- 
+
  .center h1 {
    margin-bottom: 10px;
  }
- 
+
  /* typography */
- 
+
  h1, h2, h3, h4, h5, h6 {
    line-height: 1;
  }
- 
+
  h1 {
    font-size: 3em;
    letter-spacing: -2px;
    margin-bottom: 30px;
    text-align: center;
-  
+
  }
- 
+
  h2 {
  }
- 
+
  li {
    font-size: 1em;
    letter-spacing: 0px;
    margin-bottom: 2px;
    text-align: left;
  }
- 
+
  p {
    font-size: 1.1em;
    line-height: 1.7em;
  }
- 
+
  /* header */
  .h-d a {
    color: #fff;
@@ -63,12 +69,12 @@
  #header a {
    color: #00B4E4
  }
- 
+
  #header li {
  	 color: #00B4E4;
  	 padding-top: 15px;
  	 }
- 
+
  #logo {
    float: left;
    margin-right: 10px;
@@ -80,19 +86,27 @@
    padding-bottom: 15px;
    font-weight: bold;
  }
- 
+
  .footer {
- 	background: #EDEFF1;
- 	height: auto;
- 	padding-top: 10px;
- 	padding-bottom: 5px;
- 	position: fixed;
-   bottom: 0px;
- 	width: 100%;
- 	border-bottom: 1px solid #CCCCCC;
- 	border-top: 1px solid #DDDDDD;
- 	margin-top:15px;
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   /* Set the fixed height of the footer here */
+   height: 60px;
+   background-color: #f5f5f5;
  }
+ // .footer2 {
+ // 	background: #EDEFF1;
+ // 	height: auto;
+ // 	padding-top: 10px;
+ // 	padding-bottom: 5px;
+ // 	position: fixed;
+ //   bottom: 0px;
+ // 	width: 100%;
+ // 	border-bottom: 1px solid #CCCCCC;
+ // 	border-top: 1px solid #DDDDDD;
+ // 	margin-top:15px;
+ // }
  .footer p {
  	margin: 0;
  }
@@ -196,30 +210,30 @@
  	margin: 0 0 0 5px;
  	color: #EDEFF1 !important;
  }
- .footer-bottom {
- 	background: #E3E3E3;
- 	border-top: 1px solid #DDDDDD;
- 	margin-top: 50px;
- 	margin-top: 300px;
- 	padding-top: 10px;
- 	padding-bottom: 10px;
- 	color:black;
- }
- .footer-bottom p.pull-left {
- 	padding-top: 6px;
- }
+ // .footer-bottom {
+ // 	background: #E3E3E3;
+ // 	border-top: 1px solid #DDDDDD;
+ // 	margin-top: 50px;
+ // 	margin-top: 300px;
+ // 	padding-top: 10px;
+ // 	padding-bottom: 10px;
+ // 	color:black;
+ // }
+ // .footer-bottom p.pull-left {
+ // 	padding-top: 6px;
+ // }
  .payments{
   font-size: 1.5em;
  }
- 
- 
+
+
  .row {
  	margin-top: 6px;
  	margin-bottom: 6px;
  	text-align: center;
- 
+
  }
- 
+
  #wrapper {
  	width: 960px;
  	margin:0 auto;
@@ -228,9 +242,9 @@
      background-color: rgb(0, 200, 350); /* Orange */
      color: #ffffff;
      padding-top: 10px;
-     
+
  }
- 
+
  .transbox {
  	width:250px;
    	height:180px;
@@ -241,16 +255,16 @@
    	position: absolute;
    	pointer-events: none;
  }
- 
- 
+
+
  .ticker {
  	color:  #00B4E4;
  	font-size: 20px;
  	font-family: Algerian;
  }
- 
+
  /* sidebar */
- 
+
  aside {
    section.user_info {
      margin-top: 20px;
@@ -276,17 +290,17 @@
      }
    }
  }
- 
+
  .gravatar {
    float: left;
    margin-right: 10px;
  }
- 
+
  .gravatar_edit {
    margin-top: 15px;
  }
- 
- 
+
+
  #error_explanation {
    color: red;
    ul {
@@ -294,14 +308,14 @@
      margin: 0 0 30px 0;
    }
  }
- 
+
  .field_with_errors {
    @extend .has-error;
    .form-control {
      color: $state-danger-text;
    }
  }
- 
+
  .checkbox {
    margin-top: -10px;
    margin-bottom: 10px;
@@ -310,14 +324,14 @@
      font-weight: normal;
    }
  }
- 
+
  #session_remember_me {
    width: auto;
    margin-left: 0;
  }
- 
+
  /* Users index */
- 
+
  .users {
    list-style: none;
    margin: 0;
@@ -336,4 +350,3 @@
   font-family:Century;
   margin-bottom:35px;
  }
-
