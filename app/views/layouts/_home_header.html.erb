@@ -1,9 +1,9 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header class="navbar navbar-fixed-top navbar-archer">
   <div class="container" id="header">
     <%= link_to root_path do %>
     <%= image_tag("image.png",  alt: "like", class:"img_responsive" , id: "logo") %>
     <% end %>
-    
+
      <nav>
         <ul class="nav navbar-nav navbar-right h-d">
         <% if logged_in? %>
@@ -20,7 +20,7 @@
               <li><%= link_to "Data Tables", static_pages_data_tables_path, :class => 'navbar-link' %></li>
               <li><%= link_to "Logout", logout_path, method: :delete, :class => "navbar-link" %></li>
               <div class='row'>
-              <li><center>Logged in as <%= current_user.name %></center></li>            
+              <li><center>Logged in as <%= current_user.name %></center></li>
               </div>
         <% else %>
           <li><%= link_to "Home",static_pages_home_path,:class => 'navbar-link' %></li>

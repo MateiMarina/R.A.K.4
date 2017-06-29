@@ -63,6 +63,10 @@
  }
 
  /* header */
+
+ .navbar-archer {
+   background-color: #5B5D62;
+ }
  .h-d a {
    color: #fff;
  }
@@ -86,6 +90,8 @@
    padding-bottom: 15px;
    font-weight: bold;
  }
+
+ /* footer */
 
  .footer {
    position: absolute;
@@ -141,30 +147,7 @@
  	margin-bottom: 0 !important;
  	padding-bottom: 0;
  }
- .newsletter-box input#appendedInputButton {
- 	background: #FFFFFF;
- 	display: inline-block;
- 	float: left;
- 	height: 30px;
- 	clear: both;
- 	width: 100%;
- }
- .newsletter-box .btn {
- 	border: medium none;
- 	-webkit-border-radius: 3px;
- 	-moz-border-radius: 3px;
- 	-o-border-radius: 3px;
- 	-ms-border-radius: 3px;
- 	border-radius: 3px;
- 	display: inline-block;
- 	height: 40px;
- 	padding: 0;
- 	width: 100%;
- 	color: #fff;
- }
- .newsletter-box {
- 	overflow: hidden;
- }
+
  .bg-gray {
  	background-image: -moz-linear-gradient(center bottom, #BBBBBB 0%, #F0F0F0 100%);
  	box-shadow: 0 1px 0 #B4B3B3;
@@ -222,10 +205,6 @@
  // .footer-bottom p.pull-left {
  // 	padding-top: 6px;
  // }
- .payments{
-  font-size: 1.5em;
- }
-
 
  .row {
  	margin-top: 6px;
@@ -238,12 +217,12 @@
  	width: 960px;
  	margin:0 auto;
  }
- .jumbotron {
-     background-color: rgb(0, 200, 350); /* Orange */
-     color: #ffffff;
-     padding-top: 10px;
-
- }
+ // .jumbotron {
+ //     background-color: rgb(0, 200, 350); /* Orange */
+ //     color: #ffffff;
+ //     padding-top: 10px;
+ //
+ // }
 
  .transbox {
  	width:250px;
