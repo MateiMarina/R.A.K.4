@@ -1,41 +1,51 @@
 
-
 <body class="background">
 
   <div class="col-md-4">
+    <div class="panel panel-default">
+    <div class="panel-heading">News</div>
     <div class='row'>
-      <h2><strong>News</strong></h2>
     </div>
-      
+      <ul id="news">
         <li><%= link_to "Service Companies",  services_path %></li>
         <li><%= link_to "Operating Companies",  operatings_path %></li>
         <li><%= link_to "News", scraps_path %></li>
-      
+      </ul>
+
   </div>
-    
+</div>
+
 
   <div class="col-md-4">
-    <div class='row'>
-      <h2><strong>UKCS</strong></h2>
-    </div>
-   
+      <div class="panel panel-default">
+      <div class="panel-heading">UKCS</div>
+      <div class='row'>
+      </div>
+        <ul id="UKCS">
+
       <li><%= link_to "UKCS Map",  services_path %></li>
       <li><%= link_to "Operating Companies",  operatings_path %></li>
       <li><%= link_to "News", scraps_path %></li>
-    
-  </div>
+      <ul>
 
-  <div class="col-md-4">
-    <div class='row'>
-      <h2><strong>Search</strong></h2>
-    </div>
-    
-      <li><%= link_to "Assets",  services_path %></li>
-      <li><%= link_to "Contracts",  operatings_path %></li>
-      <li><%= link_to "Operating Companies", scraps_path %></li>
-      <li><%= link_to "People",  services_path %></li>
-      <li><%= link_to "Projects",  operatings_path %></li>
-      <li><%= link_to "Subsea Supply Chain", scraps_path %></li>
-    
   </div>
+</div>
+
+<div class="col-md-4">
+  <div class="panel panel-default">
+  <div class="panel-heading">Search</div>
+  <div class='row'>
+  </div>
+    <ul id="search">
+
+    <li><%= link_to "Assets",  services_path %></li>
+    <li><%= link_to "Contracts",  operatings_path %></li>
+    <li><%= link_to "Operating Companies", scraps_path %></li>
+    <li><%= link_to "People",  services_path %></li>
+    <li><%= link_to "Projects",  operatings_path %></li>
+    <li><%= link_to "Subsea Supply Chain", scraps_path %></li>
+    <ul>
+
+</div>
+</div>
 </body>

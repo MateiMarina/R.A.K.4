@@ -22,10 +22,10 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   template: template0
   host: localhost
-  username: tony  
-  password: 123
-  
-  
+  username:   
+  password:
+
+
 development:
   <<: *default
   database: data_scrape_development
