@@ -17,7 +17,7 @@ class ItemsController < ApplicationController
     def create
       @asset= Item.new(details)
     if  @asset.save
-        flash[:success] = "A record have been succefully deleted"
+        flash[:success] = "A record have been succefully created"
     redirect_to items_path
     else
       render 'new'
