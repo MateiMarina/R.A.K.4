@@ -2,7 +2,10 @@
 <nav>
 <ul class="breadcrumb">
   <li><%= link_to "Home",  static_pages_data_tables_path %></li>
+  <% if current_user.admin? %>
   <li><%= link_to "Add new service company", new_service_path  %></li>
+    <% end %>
+  
 </ul>
 </nav>
               
@@ -20,8 +23,10 @@
         <th>Services</th>
         <th>Estimated Booking</th>
          <th>Financial Status</th>
-          <th>Edit</th>
-           <th>Delete</th>
+          <% if current_user.admin? %>
+            <th>Edit</th>
+            <th>Delete</th>
+           <% end %>
 
 <% @service.each do |service| %>
 
@@ -35,9 +40,12 @@
              <td><%= service.services%></td>
               <td><%= service.estimated_booking %></td>
                <td><%= service.financial_status %></td> 
+
+               <% if current_user.admin? %>
    <td><%= link_to "Edit", edit_service_path(service),data: { confirm: " Are you Sure you want to edit?" }  %></td>
    <td><%= link_to "Delete", service_path(service), method: :delete,
           data: { confirm: " Are You sure you want to Delet?" } %></td></tr> 
+               <% end %>
          
 <% end %>
 </table>

@@ -1,33 +1,46 @@
 class ProjectsController < ApplicationController
 
     
-    class Entry
-      def initialize(title,link)
-        @title = title
-        @link = link
-      end
-      attr_reader :title
-      attr_reader :link
-    end
       
+    class Entry
+      def initialize(title,water_depth,location,fproduction,production)
+        @title = title
+        @water_depth = water_depth
+        @location = location
+        @fproduction = fproduction
+         @production = production
+         
+      end
+        attr_reader :title
+        attr_reader :water_depth
+        attr_reader :location
+        attr_reader :fproduction
+         attr_reader :production
+         
+    end
+ 
+ 
      def index
         @projects=Project.all
         require 'open-uri'
         require 'nokogiri'
-        doc = Nokogiri::HTML(open("https://itportal.decc.gov.uk/pathfinder/currentprojectsindex.html"))
-      
-       #@title = doc.css("div.row a").text
+        doc = Nokogiri::HTML(open("https://itportal.ogauthority.co.uk/eng/fox/path/PATH_REPORTS/current-projects"))
         entries = doc.css('.operator-container')
         @entriesArray = []
         entries.each do |row|
-       title = row.css('tr').text
-       link = row.css('a')[0]['href']
-        @entriesArray << Entry.new(title,link)
-    
+        title=row.css('.operator-header').text
+        #title=row.css('.field-header').text
+        water_depth=row.css('td')[7].text
+        location =row.css('td')[6].text
+        fproduction=row.css('td')[5].text
+        production=row.css('td')[8].text
+        
+        @entriesArray << Entry.new(title,water_depth,location,fproduction,production)
        end
- 
-     end 
+         
+     end
     
+ 
             
     def show
       @projects=Project.find(params[:id])
@@ -54,7 +67,7 @@ class ProjectsController < ApplicationController
     
     def edit
         @projects=Project.find(params[:id])
-      end
+    end
      #upadat user  
       def update
         @projects=Project.find(params[:id])

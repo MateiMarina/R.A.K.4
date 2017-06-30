@@ -2,7 +2,10 @@
 <nav>
 <ul class="breadcrumb">
   <li><%= link_to "Home",  static_pages_data_tables_path %></li>
+  <% if current_user.admin? %>
   <li><%= link_to "Add new Project", new_project_path  %></li>
+    <% end %>
+  
 </ul>
 </nav>
               
@@ -21,8 +24,10 @@
           <th>Capex USD</th>
           <th>Distance to Shore km</th>
           <th>Development concept</th>
-          <th>Edit</th>
-          <th>Delete</th>
+          <% if current_user.admin? %>
+            <th>Edit</th>
+            <th>Delete</th>
+           <% end %>
           
           
 
@@ -40,10 +45,11 @@
                <td><%= project.distance_to_shore%></td>
                <td><%= project.development_concept%></td>
              
-           
+            <% if current_user.admin? %>
          <td><%= link_to "Edit", edit_project_path(project),data: { confirm: " Are you Sure you want to edit?" }   %></td>
     <td><%= link_to "Delete", project_path(project), method: :delete,
           data: { confirm: " Are You sure you want to Delete?" } %></td></tr>   
+            <% end %>
           
  <% end %>
     </table>

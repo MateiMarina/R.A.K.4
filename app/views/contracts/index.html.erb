@@ -2,7 +2,9 @@
 <nav>
 <ul class="breadcrumb">
   <li><%= link_to "Home",  static_pages_data_tables_path %></li>
+    <% if current_user.admin? %>
   <li><%= link_to "Add new contract", new_contract_path  %></li>
+    <% end %>
 </ul>
 </nav>
               
@@ -16,8 +18,10 @@
      <th>Services Rendered</th>
      <th>Contract Value</th>
      <th>Award Year</th>
-      <th>Edit</th>
-      <th>Delete</th>
+      <% if current_user.admin? %>
+        <th>Edit</th>
+        <th>Delete</th>
+      <% end %>
 
 
 <% @contract.each do |contract| %>
@@ -28,9 +32,12 @@
        <td><%=contract.services_rendered %></td>
        <td><%=contract.contract_value %></td>
        <td><%=contract.award_year %></td>
+
+       <% if current_user.admin? %>
 <td><%= link_to "Edit", edit_contract_path(contract),data: { confirm: " Are you Sure you want to edit?" }   %></td>
           <td><%= link_to "Delete", contract_path(contract), method: :delete,
           data: { confirm: " Are You sure you want to delete?" } %></td></tr> 
+       <% end %>
           
  <% end %>
 

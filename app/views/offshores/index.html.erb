@@ -2,7 +2,10 @@
 <nav>
 <ul class="breadcrumb">
   <li><%= link_to "Home",  static_pages_data_tables_path %></li>
+  <% if current_user.admin? %>
   <li><%= link_to "Add new offshore field", new_offshore_path  %></li>
+    <% end %>
+  
 </ul>
 </nav>
               
@@ -26,8 +29,10 @@
           <th>Distance to Shore km</th>
           <th>No of manifolds</th>
           <th>No of installed trees</th>
-           <th>Edit</th>
-          <th>Delete</th>
+           <% if current_user.admin? %>
+            <th>Edit</th>
+            <th>Delete</th>
+           <% end %>
           
           
 
@@ -50,10 +55,12 @@
                <td><%= offshore.no_manifolds%></td>
                <td><%= offshore.no_installed_trees%></td> 
            
+             <% if current_user.admin? %>
           <td><%= link_to "Edit", edit_offshore_path(offshore),
           data: { confirm: " Are you Sure you want to edit?" } %></td>
     <td><%= link_to "Delete", offshore_path(offshore), method: :delete,
-          data: { confirm: " Are You Sure you want to Delete?" } %></td></tr>   
+          data: { confirm: " Are You Sure you want to Delete?" } %></td></tr>
+             <% end %>   
           
  <% end %>
     </table>

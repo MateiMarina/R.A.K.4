@@ -3,7 +3,10 @@
 
 <ul class="breadcrumb">
   <li><%= link_to "Home",   static_pages_data_tables_path %></li>
+    <% if current_user.admin? %>
   <li><%= link_to "Add new asset", new_item_path  %></li>
+    <% end %>
+  
 </ul>
 </nav>
               
@@ -18,8 +21,10 @@
        <th>Current manager</th>
         <th>Previous manager</th>
          <th>Asset specification</th>
+         <% if current_user.admin? %>
           <th>Edit</th>
            <th>Delete</th>
+         <% end %>
 
 <% @asset.each do |item| %>
  
@@ -31,9 +36,11 @@
             <td><%= item.previous_manager%></td>
              <td><%= item.asset_specifications%></td>
 
+             <% if current_user.admin? %>
            <td><%= link_to "Edit", edit_item_path(item),data: { confirm: " Are you Sure you want to edit?" }   %></td>
           <td><%= link_to "Delete", item_path(item), method: :delete,
           data: { confirm: " Are You sure you want to Delete?" } %></td></tr> 
+             <% end %>
           
  <% end %>
     </table>
