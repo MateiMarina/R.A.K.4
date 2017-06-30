@@ -4,8 +4,11 @@
     <%= image_tag("image.png",  alt: "like", class:"img_responsive" , id: "logo") %>
     <% end %>
 
+   
+
      <nav>
         <ul class="nav navbar-nav navbar-right h-d">
+          
         <% if logged_in? %>
           <%#= form_tag(scraps_path, :method => "get", id: "search-form") do %>
             <%#= text_field_tag :search, params[:search], placeholder: "Search NEWS" %>
