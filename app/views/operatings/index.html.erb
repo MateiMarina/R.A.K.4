@@ -2,7 +2,10 @@
 <nav>
 <ul class="breadcrumb">
   <li><%= link_to "Home",  static_pages_data_tables_path %></li>
+  <% if current_user.admin? %>
   <li><%= link_to "Add new operating company", new_operating_path  %></li>
+    <% end %>
+  
 </ul>
 </nav>
               
@@ -20,8 +23,10 @@
           <th>Incumbent IRM contractor</th>
           <th>IRM frame Agreements</th>
            <th>Estimated IRM budgets</th>
-           <th>Edit</th>
+           <% if current_user.admin? %>
+            <th>Edit</th>
             <th>Delete</th>
+           <% end %>
 
  <% @operating.each do |operator| %>
   
@@ -36,9 +41,11 @@
                 <td><%= operator.irm_frame_agreements%></td>
                  <td><%= operator.estimated_irm_budgets %></td>
  
+                <% if current_user.admin? %>
             <td><%= link_to "Edit", edit_operating_path(operator),data: { confirm: " Are you Sure you want to edit?" }   %></td>
     <td><%= link_to "Delete", operating_path(operator), method: :delete,
           data: { confirm: " Are You sure you want Delete?" } %></td></tr> 
+                <% end %>
            
   <% end %>
 </table>

@@ -2,7 +2,10 @@
 <nav>
 <ul class="breadcrumb">
   <li><%= link_to "Home",  static_pages_data_tables_path %></li>
+  <% if current_user.admin? %>
   <li><%= link_to "Add new person", new_worker_path  %></li>
+    <% end %>
+  
 </ul>
 </nav>
               
@@ -16,8 +19,12 @@
       <th>Ak_Notes</th>
        <th>Current Company</th>
          <th>Current Country</th>
-          <th>Edit</th>
-         <th>Delete</th>
+          <% if current_user.admin? %>
+            <th>Edit</th>
+            <th>Delete</th>
+          <% end %>
+
+
 <% @workers.each do |worker| %>
  
    <tr><td><%= worker.full_name%></td>
@@ -26,9 +33,13 @@
               <td><%= worker.ak_notes%></td>
             <td><%= worker.current_company %></td>
                 <td><%= worker.current_country %></td>
+
+                <% if current_user.admin? %>
          <td><%= link_to "Edit", edit_worker_path(worker),data: { confirm: " Are you Sure you want to edit?" }   %></td>
           <td><%= link_to "Delete", worker_path(worker), method: :delete,
-          data: { confirm: " Are You sure you want to Delete?" } %></td></tr>   
+          data: { confirm: " Are You sure you want to Delete?" } %></td></tr> 
+                <% end %>
+
  <% end %>
     </table>
     

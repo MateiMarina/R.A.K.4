@@ -2,7 +2,10 @@
 <nav>
 <ul class="breadcrumb">
   <li><%= link_to "Home",  static_pages_data_tables_path %></li>
+    <% if current_user.admin? %>
   <li><%= link_to "Add new location", new_location_path  %></li>
+    <% end %>
+  
 </ul>
 </nav>
               
@@ -15,18 +18,23 @@
        <th>Country</th>
         <th>Supra region</th>
          <th>Region</th>
-         <th>Edit</th>
+         <% if current_user.admin? %>
+          <th>Edit</th>
           <th>Delete</th>
+         <% end %>
 
 <% @location.each do |location| %>
  
    <tr><td><%= location.country%></td>
        <td><%= location.supra_region%></td>
         <td><%= location.region%></td>
+
+        <% if current_user.admin? %>
     <td><%= link_to "Edit", edit_location_path(location),
           data: { confirm: " Are you Sure you want to edit?" } %></td>
     <td><%= link_to "Delete", location_path(location), method: :delete,
           data: { confirm: " Are You sure you want to Delete?" } %></td></tr> 
+        <% end %>
           
  <% end %>
  </table>
