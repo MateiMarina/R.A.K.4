@@ -27,7 +27,11 @@
               </div>
         <% else %>
           <li><%= link_to "Home",static_pages_home_path,:class => 'navbar-link' %></li>
+           <ul>
+           <li><%= link_to "Service"%></a></li>
+           <ul>
           <li><%= link_to "Services",static_pages_services_path,:class => 'navbar-link' %></li>
+          </ul>
           <li><%= link_to "Ourvalues",static_pages_ourvalues_path,:class => 'navbar-link' %></li>
           <li><%= link_to "Log In", login_path, :class => 'navbar-link' %></li>
           <li><%= link_to "Sign up now!", users_new_path, :class => 'navbar-link' %></li>
