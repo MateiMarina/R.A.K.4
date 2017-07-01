@@ -1,13 +1,14 @@
-<strong><%= @user.name %></strong>, <%= @user.email %>
-<br>
-Account created: <%= @user.created_at %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-    </section>
-  </aside>
-</div>
+
+	<strong><%= @user.name %></strong>, <%= @user.email %>
+	<br>
+	Account created: <%= @user.created_at %>
+	<div class="row">
+  		<aside class="col-md-4">
+    	<section class="user_info">
+      	<h1>
+        	<%= gravatar_for @user %>
+        	<%= @user.name %>
+      	</h1>
+    	</section>
+  		</aside>
+	</div>

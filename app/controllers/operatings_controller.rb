@@ -1,4 +1,6 @@
 class OperatingsController < ApplicationController
+
+   
     
      #showing all user
     def index

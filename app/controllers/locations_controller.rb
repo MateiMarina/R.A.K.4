@@ -1,5 +1,6 @@
 class LocationsController < ApplicationController
     
+    
      #showing all user
     def index
     @location=Location.all 

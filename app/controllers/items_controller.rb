@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+ 
+  
     
     #showing all user
     def index

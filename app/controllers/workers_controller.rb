@@ -1,6 +1,8 @@
 class WorkersController < ApplicationController
+ 
+    
     def index
-    @workers=Worker.all 
+      @workers=Worker.all 
     end
             
             

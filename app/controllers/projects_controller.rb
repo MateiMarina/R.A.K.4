@@ -1,5 +1,7 @@
 class ProjectsController < ApplicationController
 
+  
+
     
       
     class Entry

@@ -1,4 +1,7 @@
 class ContractsController < ApplicationController
+
+   
+    
     
      #showing all user
     def index

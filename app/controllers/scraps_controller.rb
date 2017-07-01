@@ -1,4 +1,7 @@
 class ScrapsController < ApplicationController
+
+ 
+
     
     class Entry
       def initialize(title,link)

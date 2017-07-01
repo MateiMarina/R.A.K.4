@@ -1,4 +1,7 @@
 class ServicesController < ApplicationController
+
+ 
+    
     
     #showing all user
     def index

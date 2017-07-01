@@ -1,5 +1,7 @@
 class AssetsController < ApplicationController
     
+  
+    
     
     
     #showing all user

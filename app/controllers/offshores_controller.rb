@@ -1,5 +1,7 @@
 class OffshoresController < ApplicationController
 
+  
+
     #showing all user
 
     # class Entry
