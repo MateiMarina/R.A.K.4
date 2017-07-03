@@ -1,41 +1,37 @@
 
 <body class="background">
-
-  <div class="col-md-4">
-    <div class="panel panel-default">
-    <div class="panel-heading">News</div>
-    <div class='row'>
+<!--Displays UKCS API  -->
+  <div class="col-md-8">
+      <div class="panel panel-default">
+        <div class="panel-heading">UKCS</div>
+      <div class="panel-body">
+          <div class="container">
+            <%= image_tag("ukcs.png",  alt: "oil", class:"img_responsive") %>
+          </div>
+      </div>
     </div>
+  </div>
+
+<!--Displays News Feed -->
+  <div class="col-md-2">
+    <div class="panel panel-default">
+      <div class="panel-heading">News</div>
+        <div class='row'>
+        </div>
       <ul id="news">
         <li><%= link_to "Service Companies",  services_path %></li>
         <li><%= link_to "Operating Companies",  operatings_path %></li>
         <li><%= link_to "News", scraps_path %></li>
       </ul>
-
+    </div>
   </div>
-</div>
 
-
-  <div class="col-md-4">
-      <div class="panel panel-default">
-      <div class="panel-heading">UKCS</div>
-      <div class='row'>
-      </div>
-        <ul id="UKCS">
-
-      <li><%= link_to "UKCS Map",  services_path %></li>
-      <li><%= link_to "Operating Companies",  operatings_path %></li>
-      <li><%= link_to "News", scraps_path %></li>
-      <ul>
-
-  </div>
-</div>
-
-<div class="col-md-4">
-  <div class="panel panel-default">
-  <div class="panel-heading">Search</div>
-  <div class='row'>
-  </div>
+<!--Displays Search Function  -->
+  <div class="col-md-2">
+    <div class="panel panel-default">
+      <div class="panel-heading">Search</div>
+    <div class='row'>
+    </div>
     <ul id="search">
 
     <li><%= link_to "Assets",  services_path %></li>
@@ -45,7 +41,6 @@
     <li><%= link_to "Projects",  operatings_path %></li>
     <li><%= link_to "Subsea Supply Chain", scraps_path %></li>
     <ul>
-
-</div>
-</div>
+    </div>
+  </div>
 </body>
