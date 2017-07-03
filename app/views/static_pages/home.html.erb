@@ -7,7 +7,7 @@
   <div class='col-md-10'>
     <h2>Welcome to <a href="https://www.archerknight.com">Archer Knight</a></h2>
 
-      <div id = "mycarousel" class = "carousel" data-ride="carousel">
+      <div id = "mycarousel" class = "carousel slide" data-ride="carousel">
           <ol class = "carousel-indicators">
             <li data-target = "#mycarousel" data-slide-to = "0" class = "active"></li>
             <li data-target = "#mycarousel" data-slide-to = "1"></li>
@@ -18,6 +18,9 @@
 
             <div class = "item active">
                 <%= image_tag("oil.jpg",  alt: "oil", class:"img_responsive") %>
+                <div class = "carousel-caption"
+                  <h3>Add text Here</h3>
+                </div>
             </div>
 
             <div class = "item">
@@ -28,6 +31,13 @@
                 <%= image_tag("oil.jpg",  alt: "oil", class:"img_responsive") %>
             </div>
           </div>
+          <a class = "carousel-control left" href = "#mycarousel" data-slide = "prev">
+            <span class = "icon-prev"> </span>
+          </a>
+          <a class = "carousel-control right" href = "#mycarousel" data-slide = "next">
+            <span class = "icon-next"> </span>
+          </a>
+
       </div>
     </div>
 
@@ -35,7 +45,7 @@
   <div class='col-md-2'>
     <div class = "row">
       <div class="transbox">
-      
+
         <script type="text/javascript" src="http://oilprice.com/widgets/crude/crudechart.js"></script>
         <noscript>Please Enable Javascript for this <a href="http://oilprice.com/">Oil Price</a> widget to work</noscript>
       </div>
