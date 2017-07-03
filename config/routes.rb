@@ -41,4 +41,5 @@ Rails.application.routes.draw do
  resources :projects,      :index, :show, :new, :create, :destroy
  resources :contracts,     :index, :show, :new, :create, :destroy
  resources :users
+ resources :account_activations, only: [:edit]
 end
