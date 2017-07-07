@@ -24,6 +24,7 @@
  textarea {
    resize: vertical;
  }
+ 
 
  .center {
    text-align: center;
@@ -55,6 +56,7 @@
    letter-spacing: 0px;
    margin-bottom: 2px;
    text-align: left;
+   
  }
 
  p {
@@ -71,7 +73,7 @@
    color: #fff;
  }
  #header a {
-   color: #00B4E4
+  color: #00B4E4;
  }
 
  #header li {
@@ -89,7 +91,9 @@
    padding-top: 15px;
    padding-bottom: 15px;
    font-weight: bold;
+   
  }
+
 
  /* footer */
 
@@ -128,10 +132,19 @@
  	padding: 10px 0 10px;
  	text-transform: uppercase;
  }
+ .footer h4 {
+   	color: #00B4E4  
+ }
  .footer ul {
  	font-size: 13px;
  	list-style-type: none;
  	color: #00B4E4;
+ }
+ 
+ .footer hr {
+  padding: 5px 0 5px;
+  padding-bottom: 0;
+  line-height: 1;
  }
  // .footer ul li a {
  // 	padding: 0 0 5px 0;
@@ -146,6 +159,7 @@
  	line-height: normal;
  	margin-bottom: 0 !important;
  	padding-bottom: 0;
+ 	
  }
 
  .bg-gray {
@@ -183,6 +197,7 @@
  }
  .social li a {
  	color: #EDEFF1;
+ 	
  }
  .social li:hover {
  	border: 2px solid #2c3e50;
@@ -329,3 +344,4 @@
   font-family:Century;
   margin-bottom:35px;
  }
+
