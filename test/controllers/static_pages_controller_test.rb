@@ -12,8 +12,11 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
 
-  test "should get data" do
-    get static_pages_data_tables_url
+  test "should get services" do
+    get static_pages_data_services_url
     assert_response :success
   end
+  
+  
+  
 end
