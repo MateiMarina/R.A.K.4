@@ -1,6 +1,118 @@
 Rails.application.routes.draw do
   
-  get 'password_resets/new'
+  
+
+  get 'scraps/index'
+
+  get 'scraps/show'
+
+  get 'scraps/new'
+
+  get 'scraps/create'
+
+  get 'scraps/edit'
+
+  get 'scraps/update'
+
+  get 'scraps/destroy'
+
+  get 'projects/index'
+
+  get 'projects/show'
+
+  get 'projects/new'
+
+  get 'projects/create'
+
+  get 'projects/edit'
+
+  get 'projects/update'
+
+  get 'projects/destroy'
+
+  get 'services/index'
+
+  get 'services/show'
+
+  get 'services/new'
+
+  get 'services/create'
+
+  get 'services/edit'
+
+  get 'services/update'
+
+  get 'services/destroy'
+
+  get 'operatings/index'
+
+  get 'operatings/show'
+
+  get 'operatings/new'
+
+  get 'operatings/create'
+
+  get 'operatings/edit'
+
+  get 'operatings/update'
+
+  get 'operatings/destroy'
+
+  get 'offshores/index'
+
+  get 'offshores/show'
+
+  get 'offshores/new'
+
+  get 'offshores/create'
+
+  get 'offshores/edit'
+
+  get 'offshores/update'
+
+  get 'offshores/destroy'
+
+  get 'locations/index'
+
+  get 'locations/show'
+
+  get 'locations/new'
+
+  get 'locations/create'
+
+  get 'locations/edit'
+
+  get 'locations/update'
+
+  get 'locations/destroy'
+
+  get 'employees/index'
+
+  get 'employees/show'
+
+  get 'employees/new'
+
+  get 'employees/create'
+
+  get 'employees/edit'
+
+  get 'employees/update'
+
+  get 'employees/destroy'
+
+  get 'items/index'
+
+  get 'items/show'
+
+  get 'items/new'
+
+  get 'items/create'
+
+  get 'items/edit'
+
+  get 'items/update'
+
+  get 'items/destroy'
 
   get 'password_resets/edit'
 
