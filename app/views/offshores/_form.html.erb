@@ -1,0 +1,111 @@
+    
+          <%= form_for  @offshore  do |f| %>
+            <%= render 'shared/error_message', object: @offshore%>
+          <div class="row">
+           
+           <div class="col-md-6 col-md-offset-2">
+             <%= f.label :Field_name%><font color="red">*</font>
+             <%= f.text_field  :field_name,  class: 'form-control' %> 
+             
+           </div>
+           
+           
+           <div class="col-md-6 col-md-offset-2">
+             <%= f.label :Status%><font color="red">*</font>
+             <%= f.text_field  :field_status , class: 'form-control' %> 
+             
+           </div>
+           
+            <div class="col-md-6 col-md-offset-2">
+             <%= f.label :Original_operator%><font color="red">*</font>
+             <%= f.text_field  :original_operator, class: 'form-control' %> 
+             
+           </div>
+           
+          
+            <div class="col-md-6 col-md-offset-2">
+             <%= f.label :current_operator%><font color="red">*</font>
+             <%= f.text_field  :current_operator, class: 'form-control' %> 
+             
+           </div>
+           
+           
+            <div class="col-md-6 col-md-offset-2">
+             <%= f.label :Discovery_year%><font color="red">*</font>
+             <%= f.text_field  :discovery_yr , class: 'form-control' %> 
+             
+           </div>
+           
+           
+            <div class="col-md-6 col-md-offset-2">
+             <%= f.label :Resource%><font color="red">*</font>
+             <%= f.text_field  :resource , class: 'form-control' %> 
+             
+           </div>
+           
+            <div class="col-md-6 col-md-offset-2">
+             <%= f.label :Field_Size_Boe%><font color="red">*</font>
+             <%= f.text_field  :field_size_boe , class: 'form-control' %> 
+             
+           </div>
+           
+            <div class="col-md-6 col-md-offset-2">
+             <%= f.label :First_Production_Year%><font color="red">*</font>
+             <%= f.text_field  :first_production_yr , class: 'form-control' %> 
+             
+           </div>
+           
+            <div class="col-md-6 col-md-offset-2">
+             <%= f.label :Estimated_End_Production%><font color="red">*</font>
+             <%= f.text_field  :estimated_end_production  , class: 'form-control' %> 
+             
+           </div>
+           
+           <div class="col-md-6 col-md-offset-2">
+             <%= f.label :Field_Life_years%><font color="red">*</font>
+             <%= f.text_field  :field_life_yrs , class: 'form-control' %> 
+             
+           </div>
+           
+           <div class="col-md-6 col-md-offset-2">
+             <%= f.label :Water_depth%><font color="red">*</font>
+             <%= f.text_field  :water_depth  , class: 'form-control' %> 
+             
+           </div>
+           
+           <div class="col-md-6 col-md-offset-2">
+             <%= f.label :Capex_USD%><font color="red">*</font>
+             <%= f.text_field  :capex_usd , class: 'form-control' %> 
+             
+           </div>
+           
+           <div class="col-md-6 col-md-offset-2">
+             <%= f.label :Distance_to_Shore_km%><font color="red">*</font>
+             <%= f.text_field  :distance_to_shore_km , class: 'form-control' %> 
+             
+           </div>
+           
+           <div class="col-md-6 col-md-offset-2">
+             <%= f.label :No_of_Manifolds%><font color="red">*</font>
+             <%= f.text_field  :no_manifolds  , class: 'form-control' %> 
+             
+           </div>
+           
+           <div class="col-md-6 col-md-offset-2">
+             <%= f.label :no_intalled_trees%><font color="red">*</font>
+             <%= f.text_field :no_intalled_trees , class: 'form-control' %> 
+             
+           </div>
+           
+           
+           </div>
+           <br>
+          <div class="col-md-5 col-md-offset-2">
+          <%= f.submit "Save", class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+      </div>
+      </div>
+      
+      
