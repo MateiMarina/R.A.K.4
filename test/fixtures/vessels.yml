@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vessel_name: MyString
+  vessel_status: 
+  vessel_type: MyString
+  latitude: MyText
+  imo_no: MyText
+
+two:
+  vessel_name: MyString
+  vessel_status: 
+  vessel_type: MyString
+  latitude: MyText
+  imo_no: MyText

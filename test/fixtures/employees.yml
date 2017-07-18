@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  full_name: MyString
+  current_company: MyString
+  country: MyString
+  position: MyString
+  ak_notes: MyText
+  classification: MyText
+
+two:
+  full_name: MyString
+  current_company: MyString
+  country: MyString
+  position: MyString
+  ak_notes: MyText
+  classification: MyText

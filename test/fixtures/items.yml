@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  assets_name: MyString
+  asset_type: MyString
+  asset_owner: MyString
+  current_manager: MyString
+  previous_manager: MyString
+  asset_specifications: MyText
+  location: one
+
+two:
+  assets_name: MyString
+  asset_type: MyString
+  asset_owner: MyString
+  current_manager: MyString
+  previous_manager: MyString
+  asset_specifications: MyText
+  location: two

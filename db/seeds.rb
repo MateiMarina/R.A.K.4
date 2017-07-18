@@ -8,6 +8,8 @@
 
 User.create!(name:  "ArcherKnight",
              email: "mateivmarina@yahoo.com",
+             surname: "test",
+             company: "aberdeen uni",
              password:              "admin1",
              password_confirmation: "admin1",
              admin: true,

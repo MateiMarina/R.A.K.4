@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  service_company_name: MyString
+  address: MyText
+  year_formed: 1
+  other_operational_countries: MyString
+  about_company: MyText
+  current_focus: MyString
+  services: MyString
+  estimated_booking: MyString
+  financial_status: MyText
+  location: one
+
+two:
+  service_company_name: MyString
+  address: MyText
+  year_formed: 1
+  other_operational_countries: MyString
+  about_company: MyText
+  current_focus: MyString
+  services: MyString
+  estimated_booking: MyString
+  financial_status: MyText
+  location: two
