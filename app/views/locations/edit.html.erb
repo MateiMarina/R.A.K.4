@@ -1,0 +1,19 @@
+<div class="container">
+<nav>
+<ul class="breadcrumb">
+  <li><%= link_to "Home",   static_pages_data_tables_path %></li>
+  <li><%= link_to "Add new location", new_location_path  %></li>
+</ul>
+</nav>
+<center><h3>Edit Location File</h3></center>
+
+<center><font color="red">All fields marked * are required fields</font></center>
+<div class="row">
+    
+  <div class="col-md-8 col-md-offset-3">
+       <%= render 'locations/form' %>
+    
+    <br>
+      
+  </div>
+  </div>

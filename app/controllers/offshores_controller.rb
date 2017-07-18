@@ -26,6 +26,8 @@ class OffshoresController < ApplicationController
       @offshore = Offshore.find(params[:id])
     end
     
+    
+    
     #diplay a form to add a new record 
     def new
       @offshore = Offshore.new

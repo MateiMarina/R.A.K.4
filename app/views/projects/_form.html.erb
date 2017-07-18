@@ -1,0 +1,67 @@
+<%= form_for  @projects  do |f| %>
+       <div class="col-md-6 col-md-offset-2">
+         <%= f.label :Project_title%><font color="red">*</font>
+         <%= f.text_field  :project_title,  class: 'form-control' %> 
+         
+       </div>
+       
+       
+       <div class="col-md-6 col-md-offset-2">
+         <%= f.label :About_project%><font color="red">*</font>
+         <%= f.text_field  :about_project , class: 'form-control' %> 
+         
+       </div>
+       
+        <div class="col-md-6 col-md-offset-2">
+         <%= f.label :Resource%><font color="red">*</font>
+         <%= f.text_field  :resource, class: 'form-control' %> 
+         
+       </div>
+       
+       
+        <div class="col-md-6 col-md-offset-2">
+         <%= f.label :Status%><font color="red">*</font>
+         <%= f.text_field  :project_status, class: 'form-control' %> 
+         
+       </div>
+       
+       
+       
+        <div class="col-md-6 col-md-offset-2">
+         <%= f.label :Estimated_first_production%><font color="red">*</font>
+         <%= f.text_field  :estimated_first_production , class: 'form-control' %> 
+         
+       </div>
+       
+       
+        <div class="col-md-6 col-md-offset-2">
+         <%= f.label :Water_Depth_m=%><font color="red">*</font>
+         <%= f.text_field  :water_depth_m , class: 'form-control' %> 
+         
+       </div>
+       
+       
+        <div class="col-md-6 col-md-offset-2">
+         <%= f.label :Capex_USD%><font color="red">*</font>
+         <%= f.text_field  :capex_usd , class: 'form-control' %> 
+         
+       </div>
+       
+        <div class="col-md-6 col-md-offset-2">
+         <%= f.label :Distance_to_shore%><font color="red">*</font>
+         <%= f.text_field  :distance_to_shore , class: 'form-control' %> 
+         
+       </div>
+       
+        <div class="col-md-6 col-md-offset-2">
+         <%= f.label :Development_concept%><font color="red">*</font>
+         <%= f.text_field  :development_concept , class: 'form-control' %> 
+         
+       </div>
+      
+       </div>
+       <br>
+      <div class="col-md-5 col-md-offset-4">
+      <%= f.submit "Save", class: "btn btn-primary" %>
+      </div>
+    <% end %>
