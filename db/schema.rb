@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170718141343) do
+ActiveRecord::Schema.define(version: 20170719074121) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -133,13 +133,13 @@ ActiveRecord::Schema.define(version: 20170718141343) do
     t.text     "estimated_first_production"
     t.text     "water_depth_m"
     t.text     "capex_usd"
-    t.string   "development_concept"
+    t.text     "development_concept"
     t.text     "distance_to_shore"
-    t.integer  "contracts_id"
+    t.integer  "contract_id"
     t.integer  "location_id"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
-    t.index ["contracts_id"], name: "index_projects_on_contracts_id", using: :btree
+    t.index ["contract_id"], name: "index_projects_on_contract_id", using: :btree
     t.index ["location_id"], name: "index_projects_on_location_id", using: :btree
   end
 
@@ -219,7 +219,7 @@ ActiveRecord::Schema.define(version: 20170718141343) do
   add_foreign_key "items", "locations"
   add_foreign_key "offshores", "locations"
   add_foreign_key "operatings", "locations"
-  add_foreign_key "projects", "contracts", column: "contracts_id"
+  add_foreign_key "projects", "contracts"
   add_foreign_key "projects", "locations"
   add_foreign_key "services", "locations"
 end
