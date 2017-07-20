@@ -14,7 +14,7 @@ class ScrapsController < ApplicationController
      
   
      def index
-        @scrap =Scrap.paginate(page: params[:page] , :per_page => 5)
+        @scrap = Scrap.paginate(page: params[:page] , :per_page => 5)
 
         require 'open-uri'
         require 'nokogiri'

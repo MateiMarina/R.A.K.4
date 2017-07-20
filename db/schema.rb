@@ -10,23 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170719161705) do
+ActiveRecord::Schema.define(version: 20170720133952) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "assets", force: :cascade do |t|
-    t.integer  "asset_id"
-    t.string   "asset_name"
-    t.string   "asset_type"
-    t.string   "asset_owner"
-    t.string   "country"
-    t.string   "current_manager"
-    t.string   "previous_manager"
-    t.string   "asset_specifications"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
-  end
 
   create_table "companies", force: :cascade do |t|
     t.string   "company_type"
@@ -199,18 +186,6 @@ ActiveRecord::Schema.define(version: 20170719161705) do
     t.text     "imo_no"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-  end
-
-  create_table "workers", force: :cascade do |t|
-    t.integer  "worker_id"
-    t.string   "full_name"
-    t.string   "classification"
-    t.string   "company_type"
-    t.text     "ak_notes"
-    t.text     "current_company"
-    t.string   "current_country"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
   end
 
   add_foreign_key "company_items", "companies"
