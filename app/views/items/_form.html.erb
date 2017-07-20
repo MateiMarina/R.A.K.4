@@ -1,0 +1,51 @@
+ <%= form_for  @asset  do |f| %>
+      <div class="row">
+       
+       <div class="col-md-6 col-md-offset-2">
+         <%= f.label :Asset_name%><font color="red">*</font>
+         <%= f.text_field  :assets_name,  class: 'form-control' %> 
+         
+       </div>
+       
+       
+       <div class="col-md-6 col-md-offset-2">
+         <%= f.label :Asset_type=%><font color="red">*</font>
+         <%= f.text_field  :asset_type , class: 'form-control' %> 
+         
+       </div>
+       
+        <div class="col-md-6 col-md-offset-2">
+         <%= f.label :Asset_owner=%><font color="red">*</font>
+         <%= f.text_field  :asset_owner, class: 'form-control' %> 
+         
+       </div>
+       
+       
+       
+        <div class="col-md-6 col-md-offset-2">
+         <%= f.label :Current_manager=%><font color="red">*</font>
+         <%= f.text_field  :current_manager, class: 'form-control' %> 
+         
+       </div>
+       
+       
+        <div class="col-md-6 col-md-offset-2">
+         <%= f.label :Previous_manager=%><font color="red">*</font>
+         <%= f.text_field  :previous_manager, class: 'form-control' %> 
+         
+       </div>
+       
+       
+        <div class="col-md-6 col-md-offset-2">
+         <%= f.label :Asset_specifications=%><font color="red">*</font>
+         <%= f.text_field  :asset_specifications , class: 'form-control' %> 
+         
+       </div>
+       
+       
+       </div>
+       <br>
+      <div class="col-md-5 col-md-offset-2">
+      <%= f.submit "Save", class: "btn btn-primary" %>
+      </div>
+    <% end %>

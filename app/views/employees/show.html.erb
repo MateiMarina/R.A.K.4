@@ -16,29 +16,25 @@
       <th>position</th>
         <th>Ak_Notes</th>
           <th>Classification</th>
-    
-    
-    
-        
           <th>Edit</th>
          <th>Delete</th>
-<% @workers.each do |worker| %>
+
  
-   <tr><td><%= worker.full_name%></td>
-         <td><%= worker.current_company %></td>
-           <td><%= worker.country %></td>
-            <td><%= worker.position %></td>
-               <td><%= worker.ak_notes%></td>
-                 <td><%=worker.classification%></td>
+   <tr><td><%= @workers.full_name%></td>
+         <td><%= @workers.current_company %></td>
+           <td><%= @workers.country %></td>
+            <td><%= @workers.position %></td>
+               <td><%= @workers.ak_notes%></td>
+                 <td><%= @workers.classification%></td>
            
           
            
             
                 
-         <td><%= link_to "Edit", edit_employee_path(worker),data: { confirm: " Are you Sure you want to edit?" }   %></td>
-          <td><%= link_to "Delete", employee_path(worker), method: :delete,
+         <td><%= link_to "Edit", edit_employee_path(@workers),data: { confirm: " Are you Sure you want to edit?" }   %></td>
+          <td><%= link_to "Delete", employee_path(@workers), method: :delete,
           data: { confirm: " Are You sure you want to Delete?" } %></td></tr>   
- <% end %>
+
     </table>
 </div>
 

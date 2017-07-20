@@ -3,22 +3,22 @@ class OffshoresController < ApplicationController
     
     def index
       @offshore = Offshore.all 
-        require 'json'
-        require 'open-uri'
-        url='http://data-ogauthority.opendata.arcgis.com/datasets/ab4f6b9519794522aa6ffa6c31617bf8_0.geojson'
-        @result = JSON.parse(open(url).read).with_indifferent_access
-          @result[:features].each do |feature| 
-              Offshore.create!(
-          resource:"#{feature[:properties][:FIELDTYPE]}",
-          field_status:"#{feature[:properties][:STATUS]}",
-          original_operator:"#{feature[:properties][:ORIG_OP]}",
-          field_name:"#{feature[:properties][:FIELDNAME]}",
-          discovery_yr:"#{feature[:properties][:DISC_DATE]}",
-          water_depth:"#{feature[:properties][:DEPTH_M]}",
-          current_operator:"#{feature[:properties][:CURR_OPER]}",
-          first_production_yr:"#{feature[:properties][:PROD_DATE]}",) 
+      #   require 'json'
+      #   require 'open-uri'
+      #   url='http://data-ogauthority.opendata.arcgis.com/datasets/ab4f6b9519794522aa6ffa6c31617bf8_0.geojson'
+      #   @result = JSON.parse(open(url).read).with_indifferent_access
+      #     @result[:features].each do |feature| 
+      #         Offshore.create!(
+      #     resource:"#{feature[:properties][:FIELDTYPE]}",
+      #     field_status:"#{feature[:properties][:STATUS]}",
+      #     original_operator:"#{feature[:properties][:ORIG_OP]}",
+      #     field_name:"#{feature[:properties][:FIELDNAME]}",
+      #     discovery_yr:"#{feature[:properties][:DISC_DATE]}",
+      #     water_depth:"#{feature[:properties][:DEPTH_M]}",
+      #     current_operator:"#{feature[:properties][:CURR_OPER]}",
+      #     first_production_yr:"#{feature[:properties][:PROD_DATE]}",) 
          
-      end     
+      # end     
     end 
      
     #show a particular record

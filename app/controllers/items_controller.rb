@@ -7,7 +7,7 @@ class ItemsController < ApplicationController
             
             
     def show
-   
+     @asset = Item.find(params[:id])
     end
           #display form 
     def new
@@ -17,7 +17,7 @@ class ItemsController < ApplicationController
     def create
       @asset= Item.new(details)
     if  @asset.save
-        flash[:success] = "A record has been successfully deleted"
+        flash[:success] = "A record has been successfully created"
     redirect_to items_path
     else
       render 'new'
