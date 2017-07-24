@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  company: one
+  contract: one
+  from: MyText
+  to: MyText
+
+two:
+  company: two
+  contract: two
+  from: MyText
+  to: MyText

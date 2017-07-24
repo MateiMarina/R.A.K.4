@@ -29,6 +29,8 @@ class ItemsController < ApplicationController
      def edit
         @asset=Item.find(params[:id])
      end
+     
+     
      #upadat user  
       def update
         @asset=Item.find(params[:id])
@@ -43,7 +45,7 @@ class ItemsController < ApplicationController
 
         #strong parameters
     def details
-    params.require(:item).permit( :assets_name, :asset_type, :asset_owner,  :current_manager, :previous_manager, :asset_specifications)
+    params.require(:item).permit( :item_name, :item_type, :item_type_owner,  :current_manager, :previous_manager, :item_specifications)
     end
            #deleting a record
     def destroy

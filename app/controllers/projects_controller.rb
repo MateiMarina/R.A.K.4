@@ -1,39 +1,8 @@
 class ProjectsController < ApplicationController
     
-    #   class Entry
-    #   def initialize(title,water_depth,project_summary,p_resource,production)
-    #     @title = title
-    #     @water_depth = water_depth
-    #     @p_resource = p_resource
-    #     @production= production
-    #     @project_summary = project_summary
-    #   end
-    #     attr_reader :title
-    #     attr_reader :water_depth
-    #     attr_reader :p_resource
-    #     attr_reader :production
-    #     attr_reader :project_summary 
-    #   end
- 
     def index
         @projects=Project.all
-    #     require 'open-uri'
-    #     require 'nokogiri'
-    #     doc = Nokogiri::HTML(open("https://itportal.ogauthority.co.uk/eng/fox/path/PATH_REPORTS/current-projects"))
-    #     entries = doc.css('.operator-container')
-    #     @entriesArray = []
-    #     entries.each do |row|
-    #         Project.create!(
-    #     #title=row.css('.operator-header').text
-    #     project_title: title = row.css('.field-header').text,
-    #     water_depth_m:  water_depth = row.css('td')[7].text,
-    #     resource:  p_resource = row.css('td')[5].text,
-    #     estimated_first_production:  production = row.css('td')[8].text,
-    #     about_project: project_summary = row.css('span').text)
-        
-    #     @entriesArray << Entry.new(title,water_depth,project_summary,p_resource,production)
-    # end
-         
+    
     end
     
             

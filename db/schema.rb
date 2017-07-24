@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170720133952) do
+ActiveRecord::Schema.define(version: 20170723210245) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,13 +21,44 @@ ActiveRecord::Schema.define(version: 20170720133952) do
     t.datetime "updated_at",   null: false
   end
 
-  create_table "company_items", force: :cascade do |t|
-    t.integer  "item_id"
+  create_table "company_contracts", force: :cascade do |t|
     t.integer  "company_id"
+    t.integer  "contract_id"
+    t.text     "from"
+    t.text     "to"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["company_id"], name: "index_company_contracts_on_company_id", using: :btree
+    t.index ["contract_id"], name: "index_company_contracts_on_contract_id", using: :btree
+  end
+
+  create_table "company_employees", force: :cascade do |t|
+    t.integer  "company_id"
+    t.integer  "employee_id"
+    t.text     "begin"
+    t.text     "end"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["company_id"], name: "index_company_employees_on_company_id", using: :btree
+    t.index ["employee_id"], name: "index_company_employees_on_employee_id", using: :btree
+  end
+
+  create_table "company_items", force: :cascade do |t|
+    t.integer  "company_id"
+    t.integer  "item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["company_id"], name: "index_company_items_on_company_id", using: :btree
     t.index ["item_id"], name: "index_company_items_on_item_id", using: :btree
+  end
+
+  create_table "company_scraps", force: :cascade do |t|
+    t.integer  "company_id"
+    t.integer  "scrap_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_company_scraps_on_company_id", using: :btree
+    t.index ["scrap_id"], name: "index_company_scraps_on_scrap_id", using: :btree
   end
 
   create_table "contracts", force: :cascade do |t|
@@ -54,15 +85,15 @@ ActiveRecord::Schema.define(version: 20170720133952) do
   end
 
   create_table "items", force: :cascade do |t|
-    t.string   "assets_name"
-    t.string   "asset_type"
-    t.string   "asset_owner"
+    t.string   "item_name"
+    t.string   "item_type"
+    t.string   "item_owner"
     t.string   "current_manager"
     t.string   "previous_manager"
-    t.text     "asset_specifications"
+    t.text     "item_specifications"
     t.integer  "location_id"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.index ["location_id"], name: "index_items_on_location_id", using: :btree
   end
 
@@ -72,6 +103,24 @@ ActiveRecord::Schema.define(version: 20170720133952) do
     t.string   "region"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "offshore_operatings", force: :cascade do |t|
+    t.integer  "offshore_id"
+    t.integer  "operating_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["offshore_id"], name: "index_offshore_operatings_on_offshore_id", using: :btree
+    t.index ["operating_id"], name: "index_offshore_operatings_on_operating_id", using: :btree
+  end
+
+  create_table "offshore_stakeholders", force: :cascade do |t|
+    t.integer  "offshore_id"
+    t.integer  "stakeholder_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["offshore_id"], name: "index_offshore_stakeholders_on_offshore_id", using: :btree
+    t.index ["stakeholder_id"], name: "index_offshore_stakeholders_on_stakeholder_id", using: :btree
   end
 
   create_table "offshores", force: :cascade do |t|
@@ -94,6 +143,15 @@ ActiveRecord::Schema.define(version: 20170720133952) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.index ["location_id"], name: "index_offshores_on_location_id", using: :btree
+  end
+
+  create_table "operating_projects", force: :cascade do |t|
+    t.integer  "operating_id"
+    t.integer  "project_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["operating_id"], name: "index_operating_projects_on_operating_id", using: :btree
+    t.index ["project_id"], name: "index_operating_projects_on_project_id", using: :btree
   end
 
   create_table "operatings", force: :cascade do |t|
@@ -188,11 +246,23 @@ ActiveRecord::Schema.define(version: 20170720133952) do
     t.datetime "updated_at",    null: false
   end
 
+  add_foreign_key "company_contracts", "companies"
+  add_foreign_key "company_contracts", "contracts"
+  add_foreign_key "company_employees", "companies"
+  add_foreign_key "company_employees", "employees"
   add_foreign_key "company_items", "companies"
   add_foreign_key "company_items", "items"
+  add_foreign_key "company_scraps", "companies"
+  add_foreign_key "company_scraps", "scraps"
   add_foreign_key "contracts", "locations"
   add_foreign_key "items", "locations"
+  add_foreign_key "offshore_operatings", "offshores"
+  add_foreign_key "offshore_operatings", "operatings"
+  add_foreign_key "offshore_stakeholders", "offshores"
+  add_foreign_key "offshore_stakeholders", "stakeholders"
   add_foreign_key "offshores", "locations"
+  add_foreign_key "operating_projects", "operatings"
+  add_foreign_key "operating_projects", "projects"
   add_foreign_key "operatings", "locations"
   add_foreign_key "projects", "contracts"
   add_foreign_key "projects", "locations"
