@@ -1,42 +1,40 @@
 <div class="container">
 <nav>
 <ul class="breadcrumb">
-  <li><%= link_to "All data tables",  static_pages_data_tables_path %></li>
+  <li><%= link_to "Home",  static_pages_data_tables_path %></li>
 </ul>
 </nav>
               
-<div class="row">
-  
-                 
-                
-                    <div class="col-md-8">
-                    
-                     <h3>All Registered Users</h3>
-                         <%=  will_paginate @scraps %>
-                               
-                                    <% @entriesArray.each do |row| %>
-                          
-                                     <%= row.title %><br>
-                                    <a href='<%= row.link %>'><%= row.link %></a>
-                                     <%= row.days %>
-                                    
-                                    <% end %> 
-                                    
-                                     <% @entries.each do |row| %>
- 
-                                       <tr><td><%= row.title %></td>
-                                        <td><a href='<%= row.link %>'><%= row.link %></a></td>
-                                             <td><%= row.days %></td>
-                                      </tr>
-                                                              
-                         
-                              <% end %>
                       
-                        <%= will_paginate @scraps %>
-                    </div>
-                    </div>
+<div class="page-header"><h3>Offshore Energy Today News</h3></div>
+<div class="span3">
+<table align="" border="1px"  cellspacing="5px" class="table table-striped">
+   <th>News title</th>
+    <th>News link</th>
+     <th>Date</th>
+          
+<%= will_paginate  @scrap %>
+ 
+<% @entriesArray.each do |row| %>
+ 
+   <tr><td><%= row.title %></td>
+       <td><a href='<%= row.link %>'><%= row.link %></a></td>
+       <td><%= row.days %></td>
+  </tr>
+  
+<% end %>
 
-                 
+<% @entries.each do |row| %>
+ 
+   <tr><td><%= row.title %></td>
+       <td><a href='<%= row.link %>'><%= row.link %></a></td>
+       <td><%= row.days %></td>
+  </tr>
+  
+<% end %>
+    
+</table>
+  <%= will_paginate @scrap %>
 </div>
 </div>
 
