@@ -60,3 +60,4 @@ Rails.application.configure do
   config.allow_uncofirmed_access_for = 365.days
 
 end
+      

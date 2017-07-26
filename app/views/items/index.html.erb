@@ -19,17 +19,17 @@
           <th>Edit</th>
            <th>Delete</th>
 
-<% @asset.each do |item| %>
+<% @asset.each do |row| %>
  
-   <tr><td><%= item.assets_name%></td>
-       <td><%= item.asset_type%></td>
-        <td><%= item.asset_owner%></td>
-           <td><%= item.current_manager%></td>
-            <td><%= item.previous_manager%></td>
-             <td><%= item.asset_specifications%></td>
+   <tr><td><%= row.item_name%></td>
+       <td><%= row.item_type%></td>
+        <td><%= row.item_owner%></td>
+           <td><%= row.current_manager%></td>
+            <td><%= row.previous_manager%></td>
+             <td><%= row.item_specifications%></td>
 
-           <td><%= link_to "Edit", edit_item_path(item),data: { confirm: " Are you Sure you want to edit?" }   %></td>
-          <td><%= link_to "Delete", item_path(item), method: :delete,
+           <td><%= link_to "Edit", edit_item_path(row),data: { confirm: " Are you Sure you want to edit?" }   %></td>
+          <td><%= link_to "Delete", item_path(row), method: :delete,
           data: { confirm: " Are You sure you want to Delete?" } %></td></tr> 
           
  <% end %>
