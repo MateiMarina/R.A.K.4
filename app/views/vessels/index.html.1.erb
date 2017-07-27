@@ -1,15 +1,13 @@
 <div class="container">
 <nav>
 <ul class="breadcrumb">
-  <li><%= link_to "Home",  static_pages_data_tables_path %></li>
+  <li><%= link_to "All data tables",  static_pages_data_tables_path %></li>
 </ul>
 </nav>
-              
-                      
-<div class="page-header"><h3>Vessel Information </h3></div>
-<div class="span3">
+
+<center><div class="page-header"><h3>Vessel Information</h3></div></center>
+<div class="span3"> 
 <table align="" border="1px"  cellspacing="5px" class="table table-striped">
- 
   
   <th>Vessel Name</th>
   <th>Latitude/Longitude </th>
@@ -49,7 +47,6 @@
   
 <% end %>
 
-
 <% @contructor.each do |row| %>
        <tr><td><%= row.polaris%></td>
   <td><%= row.lontitude%></td>
@@ -59,8 +56,6 @@
   <td><%= row.imo_number%></td></tr>
   
 <% end %>
-
-
 
 <% @antlantis.each do |row| %>
        <tr><td><%= row.polaris%></td>
@@ -72,8 +67,6 @@
   
 <% end %>
 
-
-
 <% @vinci.each do |row| %>
        <tr><td><%= row.polaris%></td>
   <td><%= row.lontitude%></td>
@@ -83,7 +76,6 @@
   <td><%= row.imo_number%></td></tr>
   
 <% end %>
-
 
 
 <% @eagle.each do |row| %>
@@ -97,7 +89,6 @@
 <% end %>
 
 
-
 <% @rock_water.each do |row| %>
        <tr><td><%= row.polaris%></td>
   <td><%= row.lontitude%></td>
@@ -107,8 +98,6 @@
   <td><%= row.imo_number%></td></tr>
   
 <% end %>
-
-
 
 <% @seven_anlantic.each do |row| %>
        <tr><td><%= row.polaris%></td>
@@ -121,7 +110,6 @@
 <% end %>
 
 
-
 <% @seven_discovery.each do |row| %>
        <tr><td><%= row.polaris%></td>
   <td><%= row.lontitude%></td>
@@ -132,8 +120,6 @@
   
 <% end %>
 
-
-
 <% @seven_falcon.each do |row| %>
        <tr><td><%= row.polaris%></td>
   <td><%= row.lontitude%></td>
@@ -143,21 +129,6 @@
   <td><%= row.imo_number%></td></tr>
   
 <% end %>
-
-
-
-
-<% @seven_oplican.each do |row| %>
-       <tr><td><%= row.polaris%></td>
-  <td><%= row.lontitude%></td>
-  <td><%= row.status%></td>
-  <td><%= row.flag%></td>
-  <td><%= row.ais_vessel%></td>
-  <td><%= row.imo_number%></td></tr>
-  
-<% end %>
-
-
 
 
 <% @seven_opsrey.each do |row| %>
@@ -171,8 +142,7 @@
 <% end %>
 
 
-
-<% @deep_artic.each do |row| %>
+<% @seven_oplican.each do |row| %>
        <tr><td><%= row.polaris%></td>
   <td><%= row.lontitude%></td>
   <td><%= row.status%></td>
@@ -183,9 +153,15 @@
 <% end %>
 
 
-
-
-
+<% @deep_artic.each do |row| %>
+       <tr><td><%= row.polaris%></td>
+  <td><%= row.lontitude%></td>
+  <td><%= row.status%></td>
+  <td><%= row.flag%></td>
+  <td><%= row.ais_vessel%></td>
+  <td><%= row.imo_number%></td></tr>
+  
+<% end %>
 
 <% @wellservice.each do |row| %>
        <tr><td><%= row.polaris%></td>
@@ -198,7 +174,6 @@
 <% end %>
 
 
-
 <% @scandi.each do |row| %>
        <tr><td><%= row.polaris%></td>
   <td><%= row.lontitude%></td>
@@ -208,9 +183,6 @@
   <td><%= row.imo_number%></td></tr>
   
 <% end %>
-
-
-
 
 <% @enhancer.each do |row| %>
        <tr><td><%= row.polaris%></td>
@@ -222,8 +194,6 @@
   
 <% end %>
 
-
-
 <% @seawell.each do |row| %>
        <tr><td><%= row.polaris%></td>
   <td><%= row.lontitude%></td>
@@ -233,8 +203,6 @@
   <td><%= row.imo_number%></td></tr>
   
 <% end %>
-
-
 
 <% @willchief.each do |row| %>
        <tr><td><%= row.polaris%></td>
@@ -257,8 +225,6 @@
   
 <% end %>
 
-
-
 <% @pugasus.each do |row| %>
        <tr><td><%= row.polaris%></td>
   <td><%= row.lontitude%></td>
@@ -269,8 +235,6 @@
   
 <% end %>
 
-
-
 <% @paladin.each do |row| %>
        <tr><td><%= row.polaris%></td>
   <td><%= row.lontitude%></td>
@@ -280,7 +244,6 @@
   <td><%= row.imo_number%></td></tr>
   
 <% end %>
-
 
 <% @installer.each do |row| %>
        <tr><td><%= row.polaris%></td>
@@ -304,8 +267,6 @@
   
 <% end %>
 
-
-
 <% @explorere.each do |row| %>
        <tr><td><%= row.polaris%></td>
   <td><%= row.lontitude%></td>
@@ -315,7 +276,9 @@
   <td><%= row.imo_number%></td></tr>
   
 <% end %>
- </table>
+
+
+</table>
 </div>
 </div>
 

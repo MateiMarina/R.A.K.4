@@ -44,12 +44,13 @@ Rails.application.routes.draw do
  resources :news,          :index, :show,  :destroy
  resources :scraps,        :index, :show, :new, :create, :destroy
  resources :locations,     :index, :show, :new, :create, :destroy
- resources :employees,       :index, :show, :new, :create, :destroy
- resources :vessels,        :index
+ resources :employees,     :index, :show, :new, :create, :destroy
+ resources :vessels,       :index
  resources :items,         :index, :show, :new, :create, :destroy
  resources :offshores,     :index, :show, :new, :create, :destroy
  resources :projects,      :index, :show, :new, :create, :destroy
  resources :contracts,     :index, :show, :new, :create, :destroy
+ resources :companies,     :index, :show, :new, :create, :destroy
  resources :users
  resources :account_activations, only: [:edit]
  resources :password_resets,     only: [:new, :create, :edit, :update]
