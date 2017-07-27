@@ -10,9 +10,7 @@ class ScrapsController < ApplicationController
       attr_reader :link
       attr_reader :days
    end
-      
-     
-  
+   
      def index
         @scraps= Scrap.paginate(page: params[:page])
 

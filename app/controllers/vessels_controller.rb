@@ -52,14 +52,27 @@
                     entries = doc.css('body')
                     @entriesArray = []
                     entries.each do |row|
-                    lontitude = row.css('.details_data_link').text
+                        
+                    lontitude = row.css('.details_data_link').text,
                     status = row.css('div.table-cell.cell-full.collapse-768 > div:nth-child(5)> span:nth-child(2) > strong').text
                     flag = doc.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(4)>b').text
                     ais_vessel = doc.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(5)>b').text
                     imo_number = doc.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(1)>b').text
                     polaris = doc.css('div.table-cell.text-overflow.text-left.collapse-768 > div:nth-child(1)').text
                     
+                    
+                    Vessel.create(
+                       latitude: lontitude,
+                       vessel_status:status,
+                       country: flag,
+                       vessel_type: ais_vessel,
+                       vessel_name: polaris,
+                       imo_no: imo_number
+                        
+                        )
+                        
                     @entriesArray << Entry.new(lontitude,status,flag,ais_vessel,imo_number,polaris)
+                    
                    end
                 
                  
@@ -74,6 +87,17 @@
                     imo_number =row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(1)>b').text
                     polaris = row.css('div.table-cell.text-overflow.text-left.collapse-768 > div:nth-child(1)').text
                     
+                      
+                    Vessel.create(
+                       latitude: lontitude,
+                       vessel_status:status,
+                       country: flag,
+                       vessel_type: ais_vessel,
+                       vessel_name: polaris,
+                       imo_no: imo_number
+                        
+                        )
+                    
                     @entries << Entry.new(lontitude,status,flag,ais_vessel,imo_number,polaris)
                    end
                    
@@ -86,6 +110,17 @@
                     ais_vessel = row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(5)>b').text
                     imo_number =row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(1)>b').text
                     polaris = row.css('div.table-cell.text-overflow.text-left.collapse-768 > div:nth-child(1)').text
+                    
+                     Vessel.create(
+                       latitude: lontitude,
+                       vessel_status:status,
+                       country: flag,
+                       vessel_type: ais_vessel,
+                       vessel_name: polaris,
+                       imo_no: imo_number
+                        
+                        )
+                    
                     
                     @topaz << Entry.new(lontitude,status,flag,ais_vessel,imo_number,polaris)
                    end
@@ -101,6 +136,17 @@
                     imo_number =row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(1)>b').text
                     polaris = row.css('div.table-cell.text-overflow.text-left.collapse-768 > div:nth-child(1)').text
                     
+                     Vessel.create(
+                       latitude: lontitude,
+                       vessel_status:status,
+                       country: flag,
+                       vessel_type: ais_vessel,
+                       vessel_name: polaris,
+                       imo_no: imo_number
+                        
+                        )
+                    
+                    
                     @contructor << Entry.new(lontitude,status,flag,ais_vessel,imo_number,polaris)
                    end
                    
@@ -113,6 +159,16 @@
                     ais_vessel = row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(5)>b').text
                     imo_number =row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(1)>b').text
                     polaris = row.css('div.table-cell.text-overflow.text-left.collapse-768 > div:nth-child(1)').text
+                    
+                    Vessel.create(
+                       latitude: lontitude,
+                       vessel_status:status,
+                       country: flag,
+                       vessel_type: ais_vessel,
+                       vessel_name: polaris,
+                       imo_no: imo_number
+                        
+                        )
                     
                     @antlantis << Entry.new(lontitude,status,flag,ais_vessel,imo_number,polaris)
                    end
@@ -128,6 +184,16 @@
                     imo_number =row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(1)>b').text
                     polaris = row.css('div.table-cell.text-overflow.text-left.collapse-768 > div:nth-child(1)').text
                     
+                    Vessel.create(
+                       latitude: lontitude,
+                       vessel_status:status,
+                       country: flag,
+                       vessel_type: ais_vessel,
+                       vessel_name: polaris,
+                       imo_no: imo_number
+                        
+                        )
+                    
                     @vinci << Entry.new(lontitude,status,flag,ais_vessel,imo_number,polaris)
                    end
                    
@@ -140,6 +206,16 @@
                     ais_vessel = row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(5)>b').text
                     imo_number =row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(1)>b').text
                     polaris = row.css('div.table-cell.text-overflow.text-left.collapse-768 > div:nth-child(1)').text
+                     
+                     Vessel.create(
+                       latitude: lontitude,
+                       vessel_status:status,
+                       country: flag,
+                       vessel_type: ais_vessel,
+                       vessel_name: polaris,
+                       imo_no: imo_number
+                        
+                        )
                     
                     @eagle << Entry.new(lontitude,status,flag,ais_vessel,imo_number,polaris)
                    end
@@ -155,6 +231,16 @@
                     imo_number =row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(1)>b').text
                     polaris = row.css('div.table-cell.text-overflow.text-left.collapse-768 > div:nth-child(1)').text
                     
+                    Vessel.create(
+                       latitude: lontitude,
+                       vessel_status:status,
+                       country: flag,
+                       vessel_type: ais_vessel,
+                       vessel_name: polaris,
+                       imo_no: imo_number
+                        
+                        )
+                    
                     @rock_water << Entry.new(lontitude,status,flag,ais_vessel,imo_number,polaris)
                    end
                    
@@ -167,6 +253,16 @@
                     ais_vessel = row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(5)>b').text
                     imo_number =row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(1)>b').text
                     polaris = row.css('div.table-cell.text-overflow.text-left.collapse-768 > div:nth-child(1)').text
+                    
+                    Vessel.create(
+                       latitude: lontitude,
+                       vessel_status:status,
+                       country: flag,
+                       vessel_type: ais_vessel,
+                       vessel_name: polaris,
+                       imo_no: imo_number
+                        
+                        )
                     
                     @seven_anlantic << Entry.new(lontitude,status,flag,ais_vessel,imo_number,polaris)
                    end
@@ -181,6 +277,16 @@
                     ais_vessel = row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(5)>b').text
                     imo_number =row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(1)>b').text
                     polaris = row.css('div.table-cell.text-overflow.text-left.collapse-768 > div:nth-child(1)').text
+                   
+                    Vessel.create(
+                       latitude: lontitude,
+                       vessel_status:status,
+                       country: flag,
+                       vessel_type: ais_vessel,
+                       vessel_name: polaris,
+                       imo_no: imo_number
+                        
+                        )
                     
                     @seven_discovery << Entry.new(lontitude,status,flag,ais_vessel,imo_number,polaris)
                    end
@@ -195,6 +301,15 @@
                     ais_vessel = row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(5)>b').text
                     imo_number =row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(1)>b').text
                     polaris = row.css('div.table-cell.text-overflow.text-left.collapse-768 > div:nth-child(1)').text
+                     Vessel.create(
+                       latitude: lontitude,
+                       vessel_status:status,
+                       country: flag,
+                       vessel_type: ais_vessel,
+                       vessel_name: polaris,
+                       imo_no: imo_number
+                        
+                        )
                     
                     @seven_falcon << Entry.new(lontitude,status,flag,ais_vessel,imo_number,polaris)
                    end
@@ -209,6 +324,16 @@
                     imo_number =row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(1)>b').text
                     polaris = row.css('div.table-cell.text-overflow.text-left.collapse-768 > div:nth-child(1)').text
                     
+                    Vessel.create(
+                       latitude: lontitude,
+                       vessel_status:status,
+                       country: flag,
+                       vessel_type: ais_vessel,
+                       vessel_name: polaris,
+                       imo_no: imo_number
+                        
+                        )
+                    
                     @seven_oplican << Entry.new(lontitude,status,flag,ais_vessel,imo_number,polaris)
                    end
             
@@ -221,6 +346,16 @@
                     ais_vessel = row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(5)>b').text
                     imo_number =row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(1)>b').text
                     polaris = row.css('div.table-cell.text-overflow.text-left.collapse-768 > div:nth-child(1)').text
+                    
+                    Vessel.create(
+                       latitude: lontitude,
+                       vessel_status:status,
+                       country: flag,
+                       vessel_type: ais_vessel,
+                       vessel_name: polaris,
+                       imo_no: imo_number
+                        
+                        )
                     
                     @seven_opsrey << Entry.new(lontitude,status,flag,ais_vessel,imo_number,polaris)
                    end
@@ -237,6 +372,16 @@
                     imo_number =row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(1)>b').text
                     polaris = row.css('div.table-cell.text-overflow.text-left.collapse-768 > div:nth-child(1)').text
                     
+                    Vessel.create(
+                       latitude: lontitude,
+                       vessel_status:status,
+                       country: flag,
+                       vessel_type: ais_vessel,
+                       vessel_name: polaris,
+                       imo_no: imo_number
+                        
+                        )
+                    
                     @deep_artic << Entry.new(lontitude,status,flag,ais_vessel,imo_number,polaris)
                   end
                    
@@ -251,6 +396,16 @@
                     imo_number =row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(1)>b').text
                     polaris = row.css('div.table-cell.text-overflow.text-left.collapse-768 > div:nth-child(1)').text
                     
+                    Vessel.create(
+                       latitude: lontitude,
+                       vessel_status:status,
+                       country: flag,
+                       vessel_type: ais_vessel,
+                       vessel_name: polaris,
+                       imo_no: imo_number
+                        
+                        )
+                    
                     @wellservice << Entry.new(lontitude,status,flag,ais_vessel,imo_number,polaris)
                   end
                    
@@ -264,6 +419,17 @@
                     ais_vessel = row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(5)>b').text
                     imo_number =row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(1)>b').text
                     polaris = row.css('div.table-cell.text-overflow.text-left.collapse-768 > div:nth-child(1)').text
+                    
+                    Vessel.create(
+                       latitude: lontitude,
+                       vessel_status:status,
+                       country: flag,
+                       vessel_type: ais_vessel,
+                       vessel_name: polaris,
+                       imo_no: imo_number
+                        
+                        )
+                    
                     @scandi<< Entry.new(lontitude,status,flag,ais_vessel,imo_number,polaris)
                   end
                    
@@ -278,6 +444,16 @@
                     imo_number =row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(1)>b').text
                     polaris = row.css('div.table-cell.text-overflow.text-left.collapse-768 > div:nth-child(1)').text
                     
+                    Vessel.create(
+                       latitude: lontitude,
+                       vessel_status:status,
+                       country: flag,
+                       vessel_type: ais_vessel,
+                       vessel_name: polaris,
+                       imo_no: imo_number
+                        
+                        )
+                    
                     @enhancer << Entry.new(lontitude,status,flag,ais_vessel,imo_number,polaris)
                   end
                    
@@ -290,6 +466,17 @@
                     ais_vessel = row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(5)>b').text
                     imo_number =row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(1)>b').text
                     polaris = row.css('div.table-cell.text-overflow.text-left.collapse-768 > div:nth-child(1)').text
+                    
+                    
+                    Vessel.create(
+                       latitude: lontitude,
+                       vessel_status:status,
+                       country: flag,
+                       vessel_type: ais_vessel,
+                       vessel_name: polaris,
+                       imo_no: imo_number
+                        
+                        )
                     
                     @seawell << Entry.new(lontitude,status,flag,ais_vessel,imo_number,polaris)
                   end
@@ -305,6 +492,16 @@
                     imo_number =row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(1)>b').text
                     polaris = row.css('div.table-cell.text-overflow.text-left.collapse-768 > div:nth-child(1)').text
                     
+                    Vessel.create(
+                       latitude: lontitude,
+                       vessel_status:status,
+                       country: flag,
+                       vessel_type: ais_vessel,
+                       vessel_name: polaris,
+                       imo_no: imo_number
+                        
+                        )
+                    
                     @willchief << Entry.new(lontitude,status,flag,ais_vessel,imo_number,polaris)
                   end
                   
@@ -318,6 +515,16 @@
                     ais_vessel = row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(5)>b').text
                     imo_number =row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(1)>b').text
                     polaris = row.css('div.table-cell.text-overflow.text-left.collapse-768 > div:nth-child(1)').text
+                    
+                    Vessel.create(
+                       latitude: lontitude,
+                       vessel_status:status,
+                       country: flag,
+                       vessel_type: ais_vessel,
+                       vessel_name: polaris,
+                       imo_no: imo_number
+                        
+                        )
                     
                     @endurer<< Entry.new(lontitude,status,flag,ais_vessel,imo_number,polaris)
                   end
@@ -333,6 +540,16 @@
                     imo_number =row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(1)>b').text
                     polaris = row.css('div.table-cell.text-overflow.text-left.collapse-768 > div:nth-child(1)').text
                     
+                    Vessel.create(
+                       latitude: lontitude,
+                       vessel_status:status,
+                       country: flag,
+                       vessel_type: ais_vessel,
+                       vessel_name: polaris,
+                       imo_no: imo_number
+                        
+                        )
+                    
                     @pugasus << Entry.new(lontitude,status,flag,ais_vessel,imo_number,polaris)
                   end
                      
@@ -347,6 +564,16 @@
                     imo_number =row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(1)>b').text
                     polaris = row.css('div.table-cell.text-overflow.text-left.collapse-768 > div:nth-child(1)').text
                     
+                    Vessel.create(
+                       latitude: lontitude,
+                       vessel_status:status,
+                       country: flag,
+                       vessel_type: ais_vessel,
+                       vessel_name: polaris,
+                       imo_no: imo_number
+                        
+                        )
+                    
                     @paladin << Entry.new(lontitude,status,flag,ais_vessel,imo_number,polaris)
                   end
                    
@@ -359,6 +586,16 @@
                     ais_vessel = row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(5)>b').text
                     imo_number =row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(1)>b').text
                     polaris = row.css('div.table-cell.text-overflow.text-left.collapse-768 > div:nth-child(1)').text
+                    
+                    Vessel.create(
+                       latitude: lontitude,
+                       vessel_status:status,
+                       country: flag,
+                       vessel_type: ais_vessel,
+                       vessel_name: polaris,
+                       imo_no: imo_number
+                        
+                        )
                     
                     @installer << Entry.new(lontitude,status,flag,ais_vessel,imo_number,polaris)
                   end
@@ -373,6 +610,16 @@
                     imo_number =row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(1)>b').text
                     polaris = row.css('div.table-cell.text-overflow.text-left.collapse-768 > div:nth-child(1)').text
                     
+                    Vessel.create(
+                       latitude: lontitude,
+                       vessel_status:status,
+                       country: flag,
+                       vessel_type: ais_vessel,
+                       vessel_name: polaris,
+                       imo_no: imo_number
+                        
+                        )
+                    
                     @kestrell << Entry.new(lontitude,status,flag,ais_vessel,imo_number,polaris)
                   end
                    
@@ -385,6 +632,16 @@
                     ais_vessel = row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(5)>b').text
                     imo_number =row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(1)>b').text
                     polaris = row.css('div.table-cell.text-overflow.text-left.collapse-768 > div:nth-child(1)').text
+                    
+                    Vessel.create(
+                       latitude: lontitude,
+                       vessel_status:status,
+                       country: flag,
+                       vessel_type: ais_vessel,
+                       vessel_name: polaris,
+                       imo_no: imo_number
+                        
+                        )
                     
                     @explorere << Entry.new(lontitude,status,flag,ais_vessel,imo_number,polaris)
                   end
