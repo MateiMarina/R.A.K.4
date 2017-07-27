@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170726234943) do
+ActiveRecord::Schema.define(version: 20170727150417) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20170726234943) do
     t.string   "company_type"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.string   "company_name"
   end
 
   create_table "company_contracts", force: :cascade do |t|
@@ -70,7 +71,9 @@ ActiveRecord::Schema.define(version: 20170726234943) do
     t.integer  "location_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.integer  "project_id"
     t.index ["location_id"], name: "index_contracts_on_location_id", using: :btree
+    t.index ["project_id"], name: "index_contracts_on_project_id", using: :btree
   end
 
   create_table "employees", force: :cascade do |t|
@@ -167,6 +170,8 @@ ActiveRecord::Schema.define(version: 20170726234943) do
     t.integer  "location_id"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.integer  "company_id"
+    t.index ["company_id"], name: "index_operatings_on_company_id", using: :btree
     t.index ["location_id"], name: "index_operatings_on_location_id", using: :btree
   end
 
@@ -180,11 +185,9 @@ ActiveRecord::Schema.define(version: 20170726234943) do
     t.text     "capex_usd"
     t.text     "development_concept"
     t.text     "distance_to_shore"
-    t.integer  "contract_id"
     t.integer  "location_id"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
-    t.index ["contract_id"], name: "index_projects_on_contract_id", using: :btree
     t.index ["location_id"], name: "index_projects_on_location_id", using: :btree
   end
 
@@ -209,6 +212,8 @@ ActiveRecord::Schema.define(version: 20170726234943) do
     t.integer  "location_id"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.integer  "company_id"
+    t.index ["company_id"], name: "index_services_on_company_id", using: :btree
     t.index ["location_id"], name: "index_services_on_location_id", using: :btree
   end
 
@@ -255,6 +260,7 @@ ActiveRecord::Schema.define(version: 20170726234943) do
   add_foreign_key "company_scraps", "companies"
   add_foreign_key "company_scraps", "scraps"
   add_foreign_key "contracts", "locations"
+  add_foreign_key "contracts", "projects"
   add_foreign_key "items", "locations"
   add_foreign_key "offshore_operatings", "offshores"
   add_foreign_key "offshore_operatings", "operatings"
@@ -263,8 +269,9 @@ ActiveRecord::Schema.define(version: 20170726234943) do
   add_foreign_key "offshores", "locations"
   add_foreign_key "operating_projects", "operatings"
   add_foreign_key "operating_projects", "projects"
+  add_foreign_key "operatings", "companies"
   add_foreign_key "operatings", "locations"
-  add_foreign_key "projects", "contracts"
   add_foreign_key "projects", "locations"
+  add_foreign_key "services", "companies"
   add_foreign_key "services", "locations"
 end
