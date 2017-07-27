@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170726143137) do
+ActiveRecord::Schema.define(version: 20170726234943) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -134,7 +134,6 @@ ActiveRecord::Schema.define(version: 20170726143137) do
     t.text     "first_production_yr"
     t.text     "estimated_end_production"
     t.text     "field_life_yrs"
-    t.text     "water_depth"
     t.text     "capex_usd"
     t.text     "distance_to_shore_km"
     t.text     "no_manifolds"
@@ -142,6 +141,7 @@ ActiveRecord::Schema.define(version: 20170726143137) do
     t.integer  "location_id"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.decimal  "water_depth"
     t.index ["location_id"], name: "index_offshores_on_location_id", using: :btree
   end
 

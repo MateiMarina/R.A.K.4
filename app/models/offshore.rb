@@ -1,6 +1,7 @@
 class Offshore < ApplicationRecord
+  
+    validates :field_name, uniqueness: true 
     default_scope -> { order(created_at: :asc) }
-    
     # validates :field_name, presence: true
     # validates :field_status, presence: true
     # validates :original_operator, presence: true
