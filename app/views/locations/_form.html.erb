@@ -2,7 +2,7 @@
    
 
       <div class="row">
-       
+       <%= render 'shared/error_message', object: @location%>
        <div class="col-md-6 col-md-offset-2">
          <%= f.label :Country%><font color="red">*</font>
          <%= f.text_field  :country,  class: 'form-control' %> 
@@ -21,8 +21,6 @@
          <%= f.text_field  :region, class: 'form-control' %> 
          
        </div>
-
-       
        </div>
        <br>
       <div class="col-md-5 col-md-offset-2">

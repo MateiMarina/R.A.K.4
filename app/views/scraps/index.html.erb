@@ -13,28 +13,19 @@
     <th>News link</th>
      <th>Date</th>
           
-<%= will_paginate  @scrap %>
+<center><%= will_paginate  @scrap %></center>
  
-<% @entriesArray.each do |row| %>
+<% @scraps.each do |row| %>
  
    <tr><td><%= row.title %></td>
        <td><a href='<%= row.link %>'><%= row.link %></a></td>
-       <td><%= row.days %></td>
+       <td><%= row.day %></td>
   </tr>
   
 <% end %>
 
-<% @entries.each do |row| %>
- 
-   <tr><td><%= row.title %></td>
-       <td><a href='<%= row.link %>'><%= row.link %></a></td>
-       <td><%= row.days %></td>
-  </tr>
-  
-<% end %>
-    
 </table>
-  <%= will_paginate @scrap %>
+ <center><%= will_paginate  @scrap %></center>
 </div>
 </div>
 

@@ -2,7 +2,7 @@ class OffshoresController < ApplicationController
     
     
     def index
-      @offshore = Offshore.all 
+      @offshore = Offshore.all.paginate(page: params[:page], :per_page => 70) 
          require 'json'
          require 'open-uri'
          url='http://data-ogauthority.opendata.arcgis.com/datasets/ab4f6b9519794522aa6ffa6c31617bf8_0.geojson'

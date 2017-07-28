@@ -1,6 +1,6 @@
  <%= form_for  @asset  do |f| %>
       <div class="row">
-       
+        <%= render 'shared/error_message', object: @asset%>
        <div class="col-md-6 col-md-offset-2">
          <%= f.label :Asset_name%><font color="red">*</font>
          <%= f.text_field  :item_name,  class: 'form-control' %> 

@@ -1,25 +1,65 @@
 class ProjectsController < ApplicationController
     
+    class Entry
+      def initialize(title,water_depth,project_summary,p_resource,production)
+        @title = title
+        @water_depth = water_depth
+        @p_resource = p_resource
+        @production= production
+        @project_summary = project_summary
+      end
+        attr_reader :title
+        attr_reader :water_depth
+        attr_reader :p_resource
+        attr_reader :production
+        attr_reader :project_summary 
+    end
+ 
     def index
-        @projects=Project.all
-    
+        
+        @projects = Project.all.paginate(page: params[:page])
+        require 'open-uri'
+        require 'nokogiri'
+        doc = Nokogiri::HTML(open("https://itportal.ogauthority.co.uk/eng/fox/path/PATH_REPORTS/current-projects"))
+        entries = doc.css('.operator-container')
+        @entriesArray = []
+        entries.each do |row|
+          
+        #title=row.css('.operator-header').text
+          title = row.css('.field-header').text
+          water_depth = row.css('td')[7].text
+          p_resource = row.css('td')[5].text
+          production = row.css('td')[8].text
+          project_summary = row.css('span').text
+        
+        
+          Project.create(                  
+          project_title: title,
+          water_depth_m:  water_depth,
+          resource:  p_resource,
+          estimated_first_production:  production ,
+          about_project: project_summary)
+        
+        @entriesArray << Entry.new(title,water_depth,project_summary,p_resource,production)
+    end
+         
     end
     
-            
+
     def show
-      @projects=Project.find(params[:id])
+      @projects = Project.find(params[:id])
     end
     
     
           #display form 
     def new
-       @projects=Project.new
+       @projects = Project.new
     end
     
     
          #creating new comany record
     def create
-       @projects=Project.new(add_project)
+       @projectsv= Project.new(add_project)
     if   @projects.save
         flash[:success] = "A record has been successfully deleted"
     redirect_to projects_path
@@ -36,11 +76,11 @@ class ProjectsController < ApplicationController
     
     
     def edit
-        @projects=Project.find(params[:id])
+        @projects = Project.find(params[:id])
     end
      #upadat user  
       def update
-        @projects=Project.find(params[:id])
+        @projects = Project.find(params[:id])
         if @projects.update_attributes(add_project)
            flash[:success] = "Project Form updated"
            redirect_to projects_path
