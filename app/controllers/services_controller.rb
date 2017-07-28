@@ -1,5 +1,5 @@
 class ServicesController < ApplicationController
-   #showing all user
+    #showing all user
     def index
     @service=Service.all 
     end
