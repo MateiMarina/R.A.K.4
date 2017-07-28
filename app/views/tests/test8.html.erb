@@ -1,0 +1,25 @@
+
+
+
+<div class="page-header"><h3>Test 1</h3></div>
+  <div class="span3">
+    <table align="" border="1px" class="table table-striped">
+      
+      <th>Contract Name</th>
+      <th>Contract Value</th>
+      
+   <tr><td><%#= @contracts.find(0) %></td>
+     <td><%#= @contracts.select %></td>
+
+
+      
+
+	<% @contracts.each_row do |row| %>
+	<tr><td><%= row[0]  %></td>
+		<td><%= row[1] %></td>
+		<% end %>
+        
+      
+    
+    </table>
+</div>

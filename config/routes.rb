@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   get 'static_pages/about'
   get 'static_pages/contact'
   get 'static_pages/scrap_project'
+  get 'tests/test1', to: 'tests#test1'
+  get 'tests/test8', to: 'tests#test8' 
   
 
 

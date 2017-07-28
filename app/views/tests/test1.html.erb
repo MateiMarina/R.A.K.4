@@ -1,0 +1,16 @@
+<%= @companies %>
+
+<div class="page-header"><h3>Test 1</h3></div>
+  <div class="span3">
+    <table align="" border="1px" class="table table-striped">
+      
+      <th>Item Name</th>
+      
+     
+      <% @companies.column_values(0).each do |item| %>
+         <tr><td><%= item  %></td>
+        
+      <% end %>
+    
+    </table>
+</div>
