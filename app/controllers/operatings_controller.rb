@@ -1,57 +1,57 @@
 class OperatingsController < ApplicationController
-       #showing all user
+     #showing all user
     def index
-    @operating=Operating.all 
-    
+    @operating = Operating.all 
     end
             
             
     def show
-    @operating=Operating.find(params[:id])
+    @operating= Operating.find(params[:id])
     end
-          #display form 
+        
+     #display form 
     def new
-    @operating=Operating.new
+     @operating = Operating.new
     end
          #creating new comany record
+         
     def create
-    @operating = Operating.new(op_company)
-    if @operating.save
-        flash[:success] = "A recorded has been successfully Saved"
+     @Operating = Operating.new(operate)
+    if  @Operating.save
+    flash[:success] = "A record add been succefully deleted"
     redirect_to operatings_path
     else
       render 'new'
     end
     end
+
         #strong parameters
-    def op_company
+    def operate
     params.require(:operating).permit(:operating_company_name, :address, :year_formed, :other_operational_countries, :about_company, :current_focus, :incumbent_irm_contractor, :irm_frame_agreements, :estimated_irm_budget)
     end
     
-    
-    
-    
-     def edit
-        @operating=Operating.find(params[:id])
-     end
-     
-     
-     #upadat operating company table 
+
+      # edit a user
+      def edit
+        @operating = Operating.find(params[:id])
+      end
+      
+     #upadat user  
       def update
-        @operating=Operating.find(params[:id])
-        if @operating.update_attributes(op_company)
-           flash[:success] = "Operating Form updated"
+        @operating = Operating.find(params[:id])
+        if @operating.update_attributes(operate)
+           flash[:success] = "Services form updated"
            redirect_to operatings_path
         else
-            render'edit'
+           render'edit'
         end
       end
     
+
            #deleting a record
     def destroy
     Operating.find(params[:id]).destroy
-    flash[:success] = "A record has been successfully deleted"
-    redirect_to operatings_path
+    flash[:success] = "A record add been successfully deleted"
+    redirect_to services_path
     end
-    
 end
