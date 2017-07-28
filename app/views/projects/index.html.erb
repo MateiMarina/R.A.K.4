@@ -9,7 +9,10 @@
                       
 <div class="page-header"><h3>Projects</h3></div>
 <div class="span3">
+ <center><%= will_paginate @projects %></center>
 <table align="" border="1px"  cellspacing="5px" class="table table-striped">
+ 
+ 
    <th>Project title</th>
    <th>Development concept</th>
      <th>Resource</th>
@@ -42,7 +45,10 @@
           data: { confirm: " Are You sure you want to Delete?" } %></td></tr>   
           
  <% end %>
+ 
+
  </table>
+ <center><%= will_paginate  @projects %></center>
  </div>
  </div>
   

@@ -18,6 +18,8 @@
                 end
                     
                  def index
+                   @vessel = Vessel.all.paginate(page: params[:page])
+                   
                     require 'open-uri'
                     require 'nokogiri'
                     doc = Nokogiri::HTML(open("https://www.marinetraffic.com/en/ais/details/ships/shipid:184208/mmsi:232585000/vessel:BIBBY%20POLARIS/"))
