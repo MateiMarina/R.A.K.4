@@ -2,7 +2,7 @@ class ContractsController < ApplicationController
       
       #showing all user
     def index
-    @contract=Contract.all 
+    @contract = Contract.all 
     
     end
             
@@ -13,11 +13,11 @@ class ContractsController < ApplicationController
         
         #display form 
     def new
-    @contract=Contract.new
+    @contract = Contract.new
     end
          #creating new comany record
     def create
-     @contract=Contract.new(located)
+     @contract = Contract.new(located)
     if  @contract.save
         flash[:success] = "A record has been successfully deleted"
     redirect_to contracts_path
@@ -34,13 +34,13 @@ class ContractsController < ApplicationController
 
     
      def edit
-        @contract=Contract.find(params[:id])
+        @contract = Contract.find(params[:id])
      end
      
      
      #upadat user  
       def update
-        @contract=Contract.find(params[:id])
+        @contract = Contract.find(params[:id])
         if @contract.update_attributes(located)
            flash[:success] = "Contract form updated"
            redirect_to contracts_path

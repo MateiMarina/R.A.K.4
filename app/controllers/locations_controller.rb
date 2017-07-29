@@ -2,7 +2,7 @@ class LocationsController < ApplicationController
     
   #showing all user
     def index
-    @location=Location.all 
+    @location = Location.all 
     end
             
             
@@ -11,7 +11,7 @@ class LocationsController < ApplicationController
     end
           #display form 
     def new
-     @location=Location.new
+     @location = Location.new
     end
          #creating new comany record
     def create
@@ -31,11 +31,11 @@ class LocationsController < ApplicationController
     
     
      def edit
-        @location=Location.find(params[:id])
+        @location = Location.find(params[:id])
      end
      #upadat user  
       def update
-        @location=Location.find(params[:id])
+        @location = Location.find(params[:id])
         if  @location.update_attributes(located)
            flash[:success] = "Location form updated"
            redirect_to locations_path
