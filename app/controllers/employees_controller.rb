@@ -30,7 +30,7 @@ class EmployeesController < ApplicationController
     end
     
     
-    
+      # edit   employee form 
      def edit
         @workers = Employee.find(params[:id])
      end
@@ -48,7 +48,7 @@ class EmployeesController < ApplicationController
     
     
     
-    
+      # delete a particular employee form 
     def destroy
     Employee.find(params[:id]).destroy
     flash[:success] = "A record has been successfully deleted"

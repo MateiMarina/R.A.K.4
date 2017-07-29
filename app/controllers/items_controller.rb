@@ -11,11 +11,11 @@ class ItemsController < ApplicationController
     end
           #display form 
     def new
-      @asset=Item.new
+      @asset = Item.new
     end
          #creating new comany record
     def create
-      @asset= Item.new(details)
+      @asset = Item.new(details)
     if  @asset.save
         flash[:success] = "A record has been successfully created"
     redirect_to items_path
@@ -27,13 +27,13 @@ class ItemsController < ApplicationController
 
     
      def edit
-        @asset=Item.find(params[:id])
+        @asset  = Item.find(params[:id])
      end
      
      
      #upadat user  
       def update
-        @asset=Item.find(params[:id])
+        @asset = Item.find(params[:id])
         if @asset.update_attributes(details)
            flash[:success] = "Asset Form updated"
            redirect_to items_path

@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
         @title = title
         @water_depth = water_depth
         @p_resource = p_resource
-        @production= production
+        @production = production
         @project_summary = project_summary
       end
         attr_reader :title

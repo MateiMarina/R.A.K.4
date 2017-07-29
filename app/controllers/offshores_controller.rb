@@ -60,7 +60,7 @@ class OffshoresController < ApplicationController
      
      #upadat offshore table manually
       def update
-        @offshore=Offshore.find(params[:id])
+        @offshore = Offshore.find(params[:id])
         if  @offshore.update_attributes(shore)
            flash[:success] = "Offshore Form updated"
            redirect_to offshores_path
