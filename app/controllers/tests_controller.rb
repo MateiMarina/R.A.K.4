@@ -27,7 +27,7 @@ class TestsController < ApplicationController
 
     def temporary1
 		require 'pg'
-		  db = PG.connect(dbname: 'data_scraper1_development', user: 'matei', password: 'matei1986')
+		  db = PG.connect(dbname: 'data_scrape_development', user: 'tony', password: 'tony123')
 		  # HEROKU VARIABLES TO HIDE THE ABOVE SENSITIVE INFO -> TO DO
 		  @fields = db.exec("SELECT * from temporary('Shell', 'Chevron')")
     end
