@@ -59,7 +59,7 @@ class ProjectsController < ApplicationController
     
          #creating new comany record
     def create
-       @projectsv= Project.new(add_project)
+       @projects= Project.new(add_project)
     if   @projects.save
         flash[:success] = "A record has been successfully deleted"
     redirect_to projects_path
