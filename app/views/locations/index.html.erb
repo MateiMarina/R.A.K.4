@@ -23,10 +23,14 @@
    <tr><td><%= location.country%></td>
        <td><%= location.supra_region%></td>
         <td><%= location.region%></td>
+        
+        <% if current_user.admin? %>
+        
     <td><%= link_to "Edit", edit_location_path(location),
           data: { confirm: " Are you Sure you want to edit?" } %></td>
     <td><%= link_to "Delete", location_path(location), method: :delete,
-          data: { confirm: " Are You sure you want to Delete?" } %></td></tr> 
+          data: { confirm: " Are You sure you want to Delete?" } %></td></tr>
+          <% end %>
           
  <% end %>
  </table>
