@@ -33,10 +33,11 @@
              <td><%= service.services%></td>
               <td><%= service.estimated_booking %></td>
                <td><%= service.financial_status %></td> 
+                <% if current_user.admin? %>
    <td><%= link_to "Edit", edit_service_path(service),data: { confirm: " Are you Sure you want to edit?" }  %></td>
    <td><%= link_to "Delete", service_path(service), method: :delete,
           data: { confirm: " Are You sure you want to Delet?" } %></td></tr> 
-         
+         <% end %>
 <% end %>
 </table>
 </div>

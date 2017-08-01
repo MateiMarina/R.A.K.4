@@ -34,10 +34,11 @@
           
            
             
-                
+            <% if current_user.admin? %>     
          <td><%= link_to "Edit", edit_employee_path(worker),data: { confirm: " Are you Sure you want to edit?" }   %></td>
           <td><%= link_to "Delete", employee_path(worker), method: :delete,
-          data: { confirm: " Are You sure you want to Delete?" } %></td></tr>   
+          data: { confirm: " Are You sure you want to Delete?" } %></td></tr>  
+           <% end %>
  <% end %>
     </table>
 </div>

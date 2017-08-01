@@ -28,11 +28,12 @@
            <td><%= row.current_manager%></td>
             <td><%= row.previous_manager%></td>
              <td><%= row.item_specifications%></td>
-
+             
+          <% if current_user.admin? %>
            <td><%= link_to "Edit", edit_item_path(row),data: { confirm: " Are you Sure you want to edit?" }   %></td>
           <td><%= link_to "Delete", item_path(row), method: :delete,
           data: { confirm: " Are You sure you want to Delete?" } %></td></tr> 
-          
+          <% end %>
  <% end %>
     </table>
     

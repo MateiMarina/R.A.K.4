@@ -26,9 +26,12 @@
        <td><%=contract.services_rendered %></td>
        <td><%=contract.contract_value %></td>
        <td><%=contract.award_year %></td>
+       
+        <% if current_user.admin? %>
 <td><%= link_to "Edit", edit_contract_path(contract),data: { confirm: " Are you Sure you want to edit?" }   %></td>
           <td><%= link_to "Delete", contract_path(contract), method: :delete,
           data: { confirm: " Are You sure you want to delete?" } %></td></tr> 
+           <% end %>
           
  <% end %>
 

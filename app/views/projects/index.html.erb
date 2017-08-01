@@ -39,11 +39,11 @@
                <td><%= project.distance_to_shore%></td>
                 <td><%= project.about_project%></td>
              
-           
+            <% if current_user.admin? %>
          <td><%= link_to "Edit", edit_project_path(project),data: { confirm: " Are you Sure you want to edit?" }   %></td>
     <td><%= link_to "Delete", project_path(project), method: :delete,
           data: { confirm: " Are You sure you want to Delete?" } %></td></tr>   
-          
+          <% end %>
  <% end %>
  
 

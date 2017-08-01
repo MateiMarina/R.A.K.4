@@ -34,10 +34,12 @@
                <td><%= operator.incumbent_irm_contractor%></td>
                 <td><%= operator.irm_frame_agreements%></td>
                  <td><%= operator.estimated_irm_budget %></td>
- 
+                 
+                     <% if current_user.admin? %>
             <td><%= link_to "Edit", edit_operating_path(operator),data: { confirm: " Are you Sure you want to edit?" }   %></td>
     <td><%= link_to "Delete", operating_path(operator), method: :delete,
           data: { confirm: " Are You sure you want Delete?" } %></td></tr> 
+           <% end %>
            
   <% end %>
 </table>
