@@ -28,21 +28,20 @@
         
          <div class="pain">
           <li><%= link_to "Home",static_pages_home_path,:class => 'navbar-link' %></a></li>
-          <li><%= link_to "Customer info",'#',:class => 'navbar-link'  %></a>
-          
+   
+          <li><%= link_to "About us",static_pages_ourvalues_path,:class => 'navbar-link' %> </a>
            <ul>
-              <li><%= link_to "Services",static_pages_services_path,:class => 'navbar-link'  %></a></li>
-              <li><%= link_to "About us",static_pages_about_path,:class => 'navbar-link'  %></a></li>
-              <li><%= link_to "Contact",static_pages_contact_path,:class => 'navbar-link'  %></a></li>
-              
+              <li><%= link_to "AKL",static_pages_AKL_path,:class => 'navbar-link'  %></a></li>
+              <li><%= link_to "R.A.K4",static_pages_rak_path,:class => 'navbar-link'  %></a></li>
+             
           </ul>
           
           </li>
           
-          <li><%= link_to "Ourvalues",static_pages_ourvalues_path,:class => 'navbar-link' %> </li>
+          <li><%= link_to "Service",static_pages_service_path,:class => 'navbar-link' %> </li>
          
           <li><%= link_to "Log In", login_path, :class => 'navbar-link' %></a></li>
-          <li><%= link_to "Sign up!", users_new_path, :class => 'navbar-link' %></a></li>
+          <li><%= link_to "Register", users_new_path, :class => 'navbar-link' %></a></li>
         <% end %>
         </ul>
        </nav>

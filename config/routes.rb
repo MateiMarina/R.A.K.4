@@ -22,6 +22,10 @@ Rails.application.routes.draw do
   get 'static_pages/data_tables'
   get 'static_pages/services'
   get 'static_pages/ourvalues'
+  get 'static_pages/AKL'
+  get 'static_pages/rak'
+   get 'static_pages/service'
+   
   get 'scraps/index'
   get 'static_pages/about'
   get 'static_pages/contact'
@@ -33,9 +37,9 @@ Rails.application.routes.draw do
   
 
 
-  get  '/signup',  to: 'users#new'
+  get  '/register',  to: 'users#new'
   
-  post '/signup',  to: 'users#create'
+  post '/register',  to: 'users#create'
 
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
