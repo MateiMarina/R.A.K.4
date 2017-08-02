@@ -22,23 +22,23 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   template: template0
   host: localhost
-  #username: admin 
+  #username: admin
   #password: admin
-  username: tony 
-  password: tony123
+  username: 
+  password:
 
   #username: matei
   #password: matei1986
- 
+
 
   #username: matei
   #password: matei1986
   # HEROKU VARIABLES TO HIDE THE ABOVE SENSITIVE INFO -> TO DO
 
- 
-  
-  
-  
+
+
+
+
 
 development:
   <<: *default

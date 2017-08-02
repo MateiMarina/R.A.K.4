@@ -24,7 +24,7 @@
  textarea {
    resize: vertical;
  }
- 
+
 
  .center {
    text-align: center;
@@ -56,7 +56,7 @@
    letter-spacing: 0px;
    margin-bottom: 2px;
    text-align: left;
-   
+
  }
 
  p {
@@ -81,6 +81,7 @@
  	 padding-top: 15px;
  	 }
 
+
  #logo {
    float: left;
    margin-right: 10px;
@@ -91,10 +92,8 @@
    padding-top: 15px;
    padding-bottom: 15px;
    font-weight: bold;
-   
+
  }
- 
- 
 
 
  /* footer */
@@ -135,17 +134,17 @@
  	text-transform: uppercase;
  }
  .footer h4 {
-   	color: #00B4E4  
+   	color: #00B4E4
  }
  .footer ul {
  	font-size: 13px;
  	list-style-type: none;
  	color: #00B4E4;
  }
- 
+
  .footer hr {
   padding: 5px 0 5px;
-  
+
  }
  // .footer ul li a {
  // 	padding: 0 0 5px 0;
@@ -160,7 +159,7 @@
  	line-height: normal;
  	margin-bottom: 0 !important;
  	padding-bottom: 0;
- 	
+
  }
 
  .bg-gray {
@@ -198,7 +197,7 @@
  }
  .social li a {
  	color: #EDEFF1;
- 	
+
  }
  .social li:hover {
  	border: 2px solid #2c3e50;
@@ -222,23 +221,35 @@
  // 	padding-top: 6px;
  // }
 
- .row {
- 	margin-top: 6px;
+/* home page */
+
+.ak {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  padding-left: 300px;
+  text-align: left;
+  // margin-left: -80px;
+  }
+
+ .oilprice {
+  margin-left: -70px;
+ 	margin-top: 35px;
  	margin-bottom: 6px;
  	text-align: center;
 
  }
 
- #wrapper {
- 	width: 960px;
- 	margin:0 auto;
+ .carouselak {
+ 	width: 1100px;
+  padding-top: 20px;
  }
- // .jumbotron {
- //     background-color: rgb(0, 200, 350); /* Orange */
- //     color: #ffffff;
- //     padding-top: 10px;
- //
- // }
+
+ .ticker {
+  padding-top: 30px;
+  padding-bottom: 30px;
+ 	font-size: 25px;
+ 	font-family: Algerian;
+ }
 
  .transbox {
  	width:250px;
@@ -249,13 +260,6 @@
    	filter:alpha(opacity=100);
    	position: absolute;
    	pointer-events: none;
- }
-
-
- .ticker {
- 	color:  #00B4E4;
- 	font-size: 20px;
- 	font-family: Algerian;
  }
 
  /* sidebar */
@@ -272,7 +276,7 @@
        padding-top: 0;
      }
      span {
-    
+
        margin-bottom: 3px;
        line-height: 1;
      }
@@ -344,12 +348,12 @@
   font-family:Century;
   margin-bottom:35px;
  }
- 
+
 .pain{
      background-color: #f5f5f5;
-} 
+}
 
- 
+
 .pain li{
     font-size:20px;
      border:1px; solid: #285189;
@@ -361,32 +365,31 @@
       opacity:.8;
       padding-left:0px;
       margin-left:-25px;
-     
+
 }
-    
+
 .pain li a{
   text-decoration:none;
   list-style:none;
   display:block;
-   	
 
-  
-}  
+
+
+}
 
 .pain li a:hover{
-   
+
     font-weight: bold;
-     
+
 }
 
 .pain li ul li{
     display:none;
     background-color:black;
- 
+
 }
 
 .pain li:hover ul li{
      display:block;
-     
-}
 
+}
