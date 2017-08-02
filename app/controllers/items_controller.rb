@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
      
     #showing all user
     def index
-     @asset=Item.all 
+     @asset=Item.all.paginate(page: params[:page], :per_page => 70) 
     end
             
             

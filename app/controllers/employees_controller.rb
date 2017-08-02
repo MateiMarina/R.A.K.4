@@ -1,6 +1,6 @@
 class EmployeesController < ApplicationController
     def index
-    @workers = Employee.all 
+    @workers = Employee.all.paginate(page: params[:page], :per_page => 70) 
     end
             
             

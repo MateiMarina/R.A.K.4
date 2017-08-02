@@ -2,7 +2,7 @@ class LocationsController < ApplicationController
     
   #showing all user
     def index
-    @location = Location.all 
+    @location = Location.all.paginate(page: params[:page], :per_page => 70) 
     end
             
             

@@ -3,7 +3,7 @@ class OperatingsController < ApplicationController
     
       #showing all user
     def index
-    @operating = Operating.all 
+    @operating = Operating.all.paginate(page: params[:page], :per_page => 70) 
     end
             
             
