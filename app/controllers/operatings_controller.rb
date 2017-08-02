@@ -20,8 +20,8 @@ class OperatingsController < ApplicationController
     def create
      @operating = Operating.new(op_company)
     if  @operating.save
-        flash[:success] = "A record add been succefully deleted"
-    redirect_to services_path
+        flash[:success] = "A record add been succefully added"
+    redirect_to operatings_path
     else
       render 'new'
     end
