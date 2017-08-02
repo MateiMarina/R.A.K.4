@@ -16,8 +16,8 @@
 #               activated: true,
 #               activated_at: Time.zone.now)
 
-User.create!(name:  "Lynne Paterson",
-              email: "lpa@archerknight.com",
+User.create!(name:  "Ross Macdonald",
+              email: "rma@archerknight.com",
               surname: "test",
               company: "Archer Knight",
               password:              "Archer_admin1",
