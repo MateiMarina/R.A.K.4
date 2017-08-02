@@ -1,39 +1,50 @@
 class CompaniesController < ApplicationController
     
        
-  #showing all user
+   #showing all record in the campany table
     def index
-    @company = Company.all 
+      @company = Company.all.paginate(page: params[:page], :per_page => 70) 
     end
             
-            
+    
+    #showing single reecord in the company table        
     def show
-    @comanay = Company.find(params[:id])
+      @comanay = Company.find(params[:id])
     end
-          #display form 
+         
+         
+    #display input form
     def new
-    @company = Company.new
+      @company = Company.new
     end
-         #creating new comany record
+    
+    
+    
+     #adding a new comany record
     def create
-     @company = Company.new(comy)
-    if  @company.save
-        flash[:success] = "A record has been successfully deleted"
-    redirect_to locations_path
-    else
-      render 'new'
+         @company = Company.new(comy)
+        if  @company.save
+            flash[:success] = "A record has been successfully added"
+        redirect_to locations_path
+        else
+          render 'new'
+        end
     end
-    end
+    
+    
 
-        #strong parameters
+     #strong parameters
     def comy
     params.require(:company).permit(:company_name, :company_type)
     end
     
     
+    
+     # editing the compay table
      def edit
         @company = Company.find(params[:id])
      end
+     
      
      
      #upadat user  
@@ -47,11 +58,13 @@ class CompaniesController < ApplicationController
         end
       end
 
-    #deleting a record
+
+
+    #deleting a record from company table 
     def destroy
-    Company.find(params[:id]).destroy
-    flash[:success] = "A record has been successfully deleted"
-    redirect_to locations_path
+        Company.find(params[:id]).destroy
+        flash[:success] = "A record has been successfully deleted"
+        redirect_to locations_path
     end
     
 end
