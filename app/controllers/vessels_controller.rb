@@ -1,4 +1,7 @@
-            class VesselsController < ApplicationController
+class VesselsController < ApplicationController
+               
+               
+                 # creating a class of entry objects
                 class Entry
                       
                   def initialize(lontitude,status,flag,ais_vessel,imo_number,polaris)
@@ -9,7 +12,7 @@
                     @ais_vessel = ais_vessel
                     @imo_number = imo_number
                   end
-                  attr_reader :lontitude
+                  attr_reader :lontitude    #reading @longtitude through it instance variable
                   attr_reader :status
                   attr_reader :flag
                   attr_reader :ais_vessel
@@ -20,8 +23,8 @@
                  def index
                    @vessel = Vessel.all.paginate(page: params[:page])
                    
-                    require 'open-uri'
-                    require 'nokogiri'
+                    require 'open-uri'   # require open uri in order to open the  webpage
+                    require 'nokogiri'   # require nokogiri to parse the webpage to variables
                     doc = Nokogiri::HTML(open("https://www.marinetraffic.com/en/ais/details/ships/shipid:184208/mmsi:232585000/vessel:BIBBY%20POLARIS/"))
                     sap = Nokogiri::HTML(open("https://www.marinetraffic.com/en/ais/details/ships/shipid:285196/mmsi:248484000/vessel:BIBBY%20SAPPHIRE"))
                     topaz = Nokogiri::HTML(open("https://www.marinetraffic.com/en/ais/details/ships/shipid:462542/mmsi:372294000/vessel:BIBBY%20TOPAZ"))
@@ -106,6 +109,8 @@
                     entries = topaz.css('body')
                     @topaz = []
                     entries.each do |row|
+                     
+                         #reading specific data using css selectors
                     lontitude = row.css('.details_data_link').text
                     status = row.css('div.table-cell.cell-full.collapse-768 > div:nth-child(5) > span:nth-child(2) > strong').text
                     flag = row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(4)>b').text
@@ -131,6 +136,7 @@
                     entries = contructor.css('body')
                     @contructor = []
                     entries.each do |row|
+                       #reading specific data using css selectors
                     lontitude = row.css('.details_data_link').text
                     status = row.css('div.table-cell.cell-full.collapse-768 > div:nth-child(5) > span:nth-child(2) > strong').text
                     flag = row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(4)>b').text
@@ -155,6 +161,7 @@
                    entries = antlantis.css('body')
                     @antlantis = []
                     entries.each do |row|
+                       #reading specific data using css selectors
                     lontitude = row.css('.details_data_link').text
                     status = row.css('div.table-cell.cell-full.collapse-768 > div:nth-child(5) > span:nth-child(2) > strong').text
                     flag = row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(4)>b').text
@@ -186,7 +193,7 @@
                     imo_number =row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(1)>b').text
                     polaris = row.css('div.table-cell.text-overflow.text-left.collapse-768 > div:nth-child(1)').text
                     
-                    Vessel.create(
+                    Vessel.create(     #saving the scraped data into the scrap(new) table
                        latitude: lontitude,
                        vessel_status:status,
                        country: flag,
@@ -233,7 +240,7 @@
                     imo_number =row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(1)>b').text
                     polaris = row.css('div.table-cell.text-overflow.text-left.collapse-768 > div:nth-child(1)').text
                     
-                    Vessel.create(
+                    Vessel.create(      #saving the scraped data into the scrap(new) table
                        latitude: lontitude,
                        vessel_status:status,
                        country: flag,
@@ -256,7 +263,7 @@
                     imo_number =row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(1)>b').text
                     polaris = row.css('div.table-cell.text-overflow.text-left.collapse-768 > div:nth-child(1)').text
                     
-                    Vessel.create(
+                    Vessel.create(      #saving the scraped data into the scrap(new) table
                        latitude: lontitude,
                        vessel_status:status,
                        country: flag,
@@ -273,6 +280,8 @@
                     entries = seven_discovery.css('body')
                     @seven_discovery = []
                     entries.each do |row|
+                     
+                    #reading specific data using css selectors
                     lontitude = row.css('.details_data_link').text
                     status = row.css('div.table-cell.cell-full.collapse-768 > div:nth-child(5) > span:nth-child(2) > strong').text
                     flag = row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(4)>b').text
@@ -280,7 +289,7 @@
                     imo_number =row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(1)>b').text
                     polaris = row.css('div.table-cell.text-overflow.text-left.collapse-768 > div:nth-child(1)').text
                    
-                    Vessel.create(
+                    Vessel.create(     #saving the scraped data into the scrap(new) table
                        latitude: lontitude,
                        vessel_status:status,
                        country: flag,
@@ -303,7 +312,8 @@
                     ais_vessel = row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(5)>b').text
                     imo_number =row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(1)>b').text
                     polaris = row.css('div.table-cell.text-overflow.text-left.collapse-768 > div:nth-child(1)').text
-                     Vessel.create(
+                   
+                     Vessel.create(    #saving the scraped data into the scrap(new) table
                        latitude: lontitude,
                        vessel_status:status,
                        country: flag,
