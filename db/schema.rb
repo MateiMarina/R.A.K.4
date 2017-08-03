@@ -185,9 +185,11 @@ ActiveRecord::Schema.define(version: 20170727150417) do
     t.text     "capex_usd"
     t.text     "development_concept"
     t.text     "distance_to_shore"
+    t.integer  "contract_id"
     t.integer  "location_id"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.index ["contract_id"], name: "index_projects_on_contract_id", using: :btree
     t.index ["location_id"], name: "index_projects_on_location_id", using: :btree
   end
 
@@ -271,6 +273,7 @@ ActiveRecord::Schema.define(version: 20170727150417) do
   add_foreign_key "operating_projects", "projects"
   add_foreign_key "operatings", "companies"
   add_foreign_key "operatings", "locations"
+  add_foreign_key "projects", "contracts"
   add_foreign_key "projects", "locations"
   add_foreign_key "services", "companies"
   add_foreign_key "services", "locations"
