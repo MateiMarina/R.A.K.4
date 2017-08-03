@@ -26,6 +26,8 @@ default: &default
   password: admin
   #username: matei
   #password: matei1986
+  username:
+  Password:
 
 
   #username: matei

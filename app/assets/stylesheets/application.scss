@@ -301,6 +301,16 @@
    }
  }
 
+ .actions {
+    text-align: center;
+    padding-top: 25px;
+}
+
+.button {
+    position: absolute;
+    top: 50%;
+}
+
  .gravatar {
    float: left;
    margin-right: 10px;
@@ -406,8 +416,7 @@
 }
 
 
-.span3 {  
-   
+.span3 {
+
     overflow: scroll;
 }
-
