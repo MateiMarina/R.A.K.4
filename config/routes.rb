@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   get 'tests/test8', to: 'tests#test8'
   get 'tests/test2', to: 'tests#test2'
   get 'tests/temporary1', to: 'tests#temporary1'
+  post 'tests/test1'
   
 
 
@@ -56,6 +57,7 @@ Rails.application.routes.draw do
  resources :contracts,     :index, :show, :new, :create, :destroy
  resources :companies,     :index, :show, :new, :create, :destroy
  resources :users
+ resources :tests
  resources :account_activations, only: [:edit]
  resources :password_resets,     only: [:new, :create, :edit, :update]
 end
