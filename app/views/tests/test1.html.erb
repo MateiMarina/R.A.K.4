@@ -1,10 +1,35 @@
+<%= form_tag tests_test1_path do %>
+  
+<% if current_user %>
+  <h4>Hello, <%= current_user.name %></h4>
+  <h4>Search oil fields count in the UK by company: </h4>
+  <%= text_field_tag :search %>
+  <%= submit_tag "Submit" %>
+<% end %>
+<% end %>
 
 
-<div class="page-header"><h3>Test 1</h3></div>
+<br><br>
+  <div class="span3">
+    <table align="" border="1px" class="table table-striped">
+         <th>Operating Company</th>
+         <th>Number of Offshore Fields</th>
+      <% @companies.each_row() do |item| %>
+         <tr><td><%= item[0]  %></td>
+         	 <td><%= item[1]  %></td>
+      <% end %>
+    </table>
+</div>
+
+
+<!-- below code is useful for a different query, needs to be left in for now (03.08.17) -->
+
+<!-- <div class="page-header"><h3>Test 1</h3></div>
   <div class="span3">
     <table align="" border="1px" class="table table-striped">
       
-      <th>Item Name</th>      
+      <th>Item Name</th>
+      <th>Item Owner</th>      
      
       <% @companies.column_values(0).each do |item| %>
          <tr><td><%= item  %></td>
@@ -12,4 +37,4 @@
       <% end %>
     
     </table>
-</div>
+</div> -->

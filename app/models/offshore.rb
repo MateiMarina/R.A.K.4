@@ -1,5 +1,5 @@
 class Offshore < ApplicationRecord
-  
+    belongs_to :company
     validates :field_name, uniqueness: true 
     default_scope -> { order(created_at: :asc) }
     # validates :field_name, presence: true

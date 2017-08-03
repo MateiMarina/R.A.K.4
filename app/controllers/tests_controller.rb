@@ -1,12 +1,17 @@
 class TestsController < ApplicationController
 
-	def test1
+
+    def test1
+
 		require 'pg'
-		  db = PG.connect(dbname: 'data_scraper1_development', user: 'matei', password: 'matei1986')
-		  # HEROKU VARIABLES TO HIDE THE ABOVE SENSITIVE INFO -> TO DO
-		  @companies = db.exec("SELECT * from getitems3(1)",)
-		
-	end
+ 	
+ 		  db = PG.connect(dbname: 'data_scraper1_development', user: 'matei', password: 'matei1986')
+ 	      # HEROKU VARIABLES TO HIDE THE ABOVE SENSITIVE INFO -> TO DO
+ 		  $company_name = Operating.all.collect { |comp| ["#{comp.operating_company_name}"] }
+ 		  @function = "Select * FROM Query40('#{params[:search]}')"
+		  @companies = db.exec(@function)
+    end
+
 
 	def test2
 		require 'pg'
