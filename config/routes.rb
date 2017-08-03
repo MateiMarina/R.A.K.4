@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get 'users/index'
   get 'static_pages/home'
   get 'static_pages/data_tables'
-  get 'static_pages/services'
+  get 'static_pages/contact'
   get 'static_pages/ourvalues'
   get 'static_pages/AKL'
   get 'static_pages/rak'
@@ -28,7 +28,7 @@ Rails.application.routes.draw do
    
   get 'scraps/index'
   get 'static_pages/about'
-  get 'static_pages/contact'
+  get 'static_pages/visitus'
   get 'static_pages/scrap_project'
   get 'tests/test1', to: 'tests#test1'
   get 'tests/test8', to: 'tests#test8'
