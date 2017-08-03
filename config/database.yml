@@ -24,8 +24,8 @@ default: &default
   host: localhost
   username: admin
   password: admin
-  #username: matei
-  #password: matei1986
+  username: matei
+  password: matei1986
   username:
   Password:
 
