@@ -12,6 +12,7 @@ class ContractsController < ApplicationController
          #show single record in the contract table       
         def show
           @contract = Contract.find(params[:id])
+          
         end
             
             

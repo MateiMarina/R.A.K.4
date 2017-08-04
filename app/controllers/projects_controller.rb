@@ -91,6 +91,7 @@ class ProjectsController < ApplicationController
               # editing a particular data in the project table
             def edit
                 @projects = Project.find(params[:id])
+                
             end
             
             
@@ -109,7 +110,7 @@ class ProjectsController < ApplicationController
             
             
             
-            #deleting a record
+            #deleting a record form  project table
             
             def destroy
                 Project.find(params[:id]).destroy

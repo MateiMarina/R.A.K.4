@@ -43,6 +43,7 @@ class EmployeesController < ApplicationController
           #edit employee table 
          def edit
             @workers = Employee.find(params[:id])
+            
          end
          
          

@@ -2,7 +2,7 @@ class VesselsController < ApplicationController
                
                
                  # creating a class of entry objects
-                class Entry
+                 class Entry
                       
                   def initialize(lontitude,status,flag,ais_vessel,imo_number,polaris)
                     @polaris = polaris
@@ -12,13 +12,15 @@ class VesselsController < ApplicationController
                     @ais_vessel = ais_vessel
                     @imo_number = imo_number
                   end
-                  attr_reader :lontitude    #reading @longtitude through it instance variable
-                  attr_reader :status
-                  attr_reader :flag
-                  attr_reader :ais_vessel
-                  attr_reader :imo_number
-                  attr_reader :polaris
-                end
+                     attr_reader :lontitude    #reading @longtitude through it instance variable
+                    attr_reader :status
+                    attr_reader :flag
+                    attr_reader :ais_vessel
+                    attr_reader :imo_number
+                    attr_reader :polaris
+                 end
+                 
+                 
                     
                  def index
                    @vessel = Vessel.all.paginate(page: params[:page])
@@ -93,7 +95,7 @@ class VesselsController < ApplicationController
                     polaris = row.css('div.table-cell.text-overflow.text-left.collapse-768 > div:nth-child(1)').text
                     
                       
-                    Vessel.create(
+                    Vessel.create(   # save the data into the database
                        latitude: lontitude,
                        vessel_status:status,
                        country: flag,
@@ -144,7 +146,7 @@ class VesselsController < ApplicationController
                     imo_number =row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(1)>b').text
                     polaris = row.css('div.table-cell.text-overflow.text-left.collapse-768 > div:nth-child(1)').text
                     
-                     Vessel.create(
+                     Vessel.create(  # saving the data into the database
                        latitude: lontitude,
                        vessel_status:status,
                        country: flag,
@@ -169,7 +171,7 @@ class VesselsController < ApplicationController
                     imo_number =row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(1)>b').text
                     polaris = row.css('div.table-cell.text-overflow.text-left.collapse-768 > div:nth-child(1)').text
                     
-                    Vessel.create(
+                    Vessel.create(   #saving the data into the database
                        latitude: lontitude,
                        vessel_status:status,
                        country: flag,
@@ -216,7 +218,7 @@ class VesselsController < ApplicationController
                     imo_number =row.css('div.bg-info.bg-light.padding-10.radius-4.text-left > div > div:nth-child(1) > div:nth-child(1)>b').text
                     polaris = row.css('div.table-cell.text-overflow.text-left.collapse-768 > div:nth-child(1)').text
                      
-                     Vessel.create(
+                     Vessel.create(  #saving the data into the database
                        latitude: lontitude,
                        vessel_status:status,
                        country: flag,
