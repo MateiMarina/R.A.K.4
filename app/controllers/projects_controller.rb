@@ -91,6 +91,7 @@ class ProjectsController < ApplicationController
               # editing a particular data in the project table
             def edit
                 @projects = Project.find(params[:id])
+                
             end
             
             
