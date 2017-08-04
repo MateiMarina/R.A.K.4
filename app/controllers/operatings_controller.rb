@@ -59,7 +59,7 @@ class OperatingsController < ApplicationController
          #upadat operating table 
           def update
             @operating = Operating.find(params[:id])
-            if @operating.update_attributes(op_comapany)
+            if @operating.update_attributes(op_company)
                flash[:success] = "Services form updated"
                redirect_to operatings_path
             else
