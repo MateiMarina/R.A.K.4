@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
-#   belongs_to :location
+   belongs_to :location, :optional => true
    default_scope -> { order(created_at: :asc) }
    
     validates :item_name, presence: true

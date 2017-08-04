@@ -17,8 +17,8 @@
            
   <% @company.each do |row| %>
  
-   <tr><td><%= worker.company_name%></td>
-         <td><%= worker.company_type%></td>
+   <tr><td><%= row.company_name%></td>
+         <td><%= row.company_type%></td>
         
           <% if current_user.admin? %>
           <td><%= link_to "Edit", edit_employee_path(row),data: { confirm: " Are you Sure you want to edit?" }   %></td>
