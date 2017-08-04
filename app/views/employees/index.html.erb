@@ -10,34 +10,30 @@
 <div class="page-header"><h3>Company People</h3></div>
 <div class="span3">
 <table align="" border="1px" class="table table-striped">
-   <th>Full Name</th>
-    <th>Current company</th>
-     <th>Country</th>
-      <th>position</th>
-        <th>Ak_Notes</th>
-          <th>Classification</th>
-    
-    
-    
-        
-          <th>Edit</th>
-         <th>Delete</th>
-  <% @workers.each do |worker| %>
- 
-   <tr><td><%= worker.full_name%></td>
-         <td><%= worker.current_company %></td>
-           <td><%= worker.country %></td>
-            <td><%= worker.position %></td>
-               <td><%= worker.ak_notes%></td>
-                 <td><%=worker.classification%></td>
-           
-          
-           
+      <th>FULL NAME</th>
+       <th>CURRENT COMPANY</th>
+        <th>COUNTRY</th>
+         <th>POSITION</th>
+           <th>AK_NOTES</th>
+            <th>CLASSIFICATION</th>
+             <th>EDIT</th>
+               <th>DELETE</th>
+       <% @workers.each do |worker| %>
+      <tr><td><%= worker.full_name%></td>
+            <td><%= worker.current_company %></td>
+              <td><%= worker.country %></td>
+               <td><%= worker.position %></td>
+                  <td><%= worker.ak_notes%></td>
+                    <td><%=worker.classification%></td>
+       </tr>
+              
+             
+              
             
             <% if current_user.admin? %>     
-         <td><%= link_to "Edit", edit_employee_path(worker),data: { confirm: " Are you Sure you want to edit?" }   %></td>
-          <td><%= link_to "Delete", employee_path(worker), method: :delete,
-          data: { confirm: " Are You sure you want to Delete?" } %></td></tr>  
+             <td><%= link_to "Edit", edit_employee_path(worker),data: { confirm: " Are you Sure you want to edit?" }   %></td>
+              <td><%= link_to "Delete", employee_path(worker), method: :delete,
+              data: { confirm: " Are You sure you want to Delete?" } %></td></tr>  
            <% end %>
  <% end %>
     </table>
