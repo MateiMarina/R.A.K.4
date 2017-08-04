@@ -2,24 +2,28 @@ class OffshoresController < ApplicationController
     
         
         def index
-          @offshore = Offshore.all.paginate(page: params[:page], :per_page => 70)  # display all records on the offshore table
-             require 'json'     # requiring json in other to read a json file
-             require 'open-uri' # require an open uri 
+            
+             @offshore = Offshore.all.paginate(page: params[:page], :per_page => 70)  # display all records on the offshore table
              
-             # parsing the URL of the API to url variable
+             require 'json'   # require json 
+             require 'open-uri'  # require open-uri
+             
+             #parsing the API to  the variable url
              url='http://data-ogauthority.opendata.arcgis.com/datasets/ab4f6b9519794522aa6ffa6c31617bf8_0.geojson'
              @result = JSON.parse(open(url).read).with_indifferent_access
-               @result[:features].each do |feature| 
-                   Offshore.create(                 # saving the data into offshore table
-               resource:"#{feature[:properties][:FIELDTYPE]}",       # reading specific data need from the API
-               field_status:"#{feature[:properties][:STATUS]}",
-               original_operator:"#{feature[:properties][:ORIG_OP]}",
-               field_name:"#{feature[:properties][:FIELDNAME]}",
-               discovery_yr:"#{feature[:properties][:DISC_DATE]}",
-               water_depth:"#{feature[:properties][:DEPTH_M]}",
-               current_operator:"#{feature[:properties][:CURR_OPER]}",
-               first_production_yr:"#{feature[:properties][:PROD_DATE]}",) 
-             
+             @result[:features].each do |feature| 
+                  
+                  Offshore.create(    # saving the data into the offshore database
+              resource:"#{feature[:properties][:FIELDTYPE]}",       #reading data from the API
+              field_status: "#{feature[:properties][:STATUS]}",
+              original_operator:"#{feature[:properties][:ORIG_OP]}",
+              field_name: "#{feature[:properties][:FIELDNAME]}",
+              discovery_yr:"#{feature[:properties][:DISC_DATE]}",
+              water_depth: "#{feature[:properties][:DEPTH_M]}",
+              current_operator:"#{feature[:properties][:CURR_OPER]}",
+              first_production_yr: "#{feature[:properties][:PROD_DATE]}")
+              
+              
            end     
         end 
         

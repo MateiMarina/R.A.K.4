@@ -109,7 +109,7 @@ class ProjectsController < ApplicationController
             
             
             
-            #deleting a record
+            #deleting a record from the project table
             
             def destroy
                 Project.find(params[:id]).destroy
