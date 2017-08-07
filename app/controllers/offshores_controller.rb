@@ -1,5 +1,5 @@
 class OffshoresController < ApplicationController
-    
+         before_action :require_login, only: [:index, :new, :edit, :update, :destroy], raise: false
         
         def index
             
@@ -94,5 +94,14 @@ class OffshoresController < ApplicationController
             Offshore.find(params[:id]).destroy
             flash[:success] = "A record has been successfully deleted"
             redirect_to offshores_path
+        end
+        
+        
+        
+         def require_login
+            unless logged_in?
+              flash[:danger] = "You must login to access this page"
+              redirect_to login_path 
+            end
         end
 end

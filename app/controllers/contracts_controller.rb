@@ -1,6 +1,6 @@
 class ContractsController < ApplicationController
       
-      
+       before_action :require_login, only: [:index, :edit, :update, :destroy], raise: false
      #showing all the record in the cotract table
         def index
           @contract = Contract.all.paginate(page: params[:page], :per_page => 70) 
@@ -68,6 +68,16 @@ class ContractsController < ApplicationController
             Contract.find(params[:id]).destroy
             flash[:success] = "A record has been successfully deleted"
             redirect_to contracts_path
+        end
+        
+        
+        
+         #security feature
+         def require_login
+            unless logged_in?
+              flash[:danger] = "You must login to access this page"
+              redirect_to login_path 
+            end
         end
         
 end

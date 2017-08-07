@@ -51,12 +51,13 @@
                 <td><%= offshore.no_manifolds %></td>
                <td><%= offshore.no_intalled_trees%></td>
                
-             
+   <% if current_user.admin? %>     
           <td><%= link_to "Edit", edit_offshore_path(offshore),
           data: { confirm: " Are you Sure you want to edit?" } %></td>
     <td><%= link_to "Delete", offshore_path(offshore), method: :delete,
           data: { confirm: " Are You Sure you want to Delete?" } %></td></tr>   
         
+ <% end %>
  <% end %>
 
 
