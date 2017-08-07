@@ -1,6 +1,7 @@
 class ServicesController < ApplicationController
       
-        
+        before_action :require_login, only: [:index, :edit, :update, :destroy], raise: false
+         
         #showing all the record in the service table
         def index
           @service = Service.all.paginate(page: params[:page], :per_page => 70) 
@@ -65,5 +66,14 @@ class ServicesController < ApplicationController
             redirect_to services_path
         end
         
+        
+        
+     #security feature
+         def require_login
+            unless logged_in?
+              flash[:danger] = "You must login to access this page"
+              redirect_to login_path 
+            end
+        end
         
 end

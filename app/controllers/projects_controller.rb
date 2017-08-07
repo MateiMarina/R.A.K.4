@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+     before_action :require_login, only: [:index, :edit, :update, :destroy], raise: false
     
             # creating a class of entry objects
             class Entry
@@ -119,4 +120,15 @@ class ProjectsController < ApplicationController
          
             end 
             
+            
+             #security feature
+         def require_login
+            unless logged_in?
+              flash[:danger] = "You must login to access this page"
+              redirect_to login_path 
+            end
+        end
+        
+        
+
 end

@@ -1,4 +1,6 @@
 class EmployeesController < ApplicationController
+          before_action :require_login, only: [:index, :new, :edit, :update, :destroy], raise: false
+        
         
         #showing all record in the comploey table
         def index
@@ -68,5 +70,16 @@ class EmployeesController < ApplicationController
               redirect_to employees_path
      
         end 
+        
+        
+        
+        
+           #security feature
+         def require_login
+            unless logged_in?
+              flash[:danger] = "You must login to access this page"
+              redirect_to login_path 
+            end
+        end
         
 end
