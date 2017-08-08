@@ -1,8 +1,12 @@
 
-	<strong><%= @user.name %></strong>, <strong><%= @user.surname %></strong>, <%= @user.email %>, <%= @user.company %>
-	<br>
-	Account created: <%= @user.created_at %>
-	<div class="row">
+	<strong>Name: </strong><%= @user.name %><br>
+  <strong>Surname: </strong><%= @user.surname %><br>
+  <strong>Email: </strong><%= @user.email %><br></strong>
+  <strong>Company: </strong><%= @user.company %><br>
+  <strong>Account created: </strong><%= @user.created_at %>
+	
+
+  <div class="row">
   		<aside class="col-md-4">
     	<section class="user_info">
       	<h1>

@@ -1,0 +1,32 @@
+<!-- View of the QUERY number 4 -->
+
+<FORM><INPUT Type="button" VALUE="Back" onClick="history.go(-1);return true;"></FORM>
+<%= form_tag tests_test4_path do %>
+  <% if current_user %>
+    <h3>Hello <%= current_user.name %>, check which contracts are related to your project</h3>
+    <br>
+    <h4>Select the project from the list below</h4>
+    <%= collection_select(:project, :project_id, @project_titles, :id, :project_title, {:prompt => true}) %>
+    <br><br>
+    <h4>Type in the project name</h4>
+    <%= text_field_tag :project_name, nil, placeholder: "Insert Project Name" %>
+    <%= submit_tag "Submit", class: "btn btn-primary" %>
+  <% end %>
+<% end %>
+<br>
+<h3>Contracts related to <%= params[:project_name] %>:</h3>
+<br>
+<div class="span3">
+  <table align="" border="1px" class="table table-striped">
+   <th>Contract name</th>
+   <th>Project title</th>
+   <th>Contract status</th>
+   <th>Services rendered</th>
+   <% @contracts.each_row() do |item| %>
+   <tr><td><%= item[0]  %></td>
+   <td><%= item[1]  %></td>
+   <td><%= item[2]  %></td>
+   <td><%= item[3]  %></td>
+   <% end %>
+  </table>
+</div>
