@@ -41,10 +41,10 @@ class OperatingsController < ApplicationController
     
             #strong parameters
         def op_company
-        params.require(:operating).permit(:operating_company_name, :address, :year_formed, :other_operational_countries, :about_company, :current_focus, :incumbent_irm_contractor, :irm_frame_agreements, :estimated_irm_budget)
+        params.require(:operating).permit(:operating_company_name, :address, :year_formed, :other_operational_countries, :about_company, :current_focus, :incumbent_irm_contractor, :irm_frame_agreements, :estimated_irm_budget, :operating_company_name => [])
         end
         
-        
+    
         
     
           # edit a operating table

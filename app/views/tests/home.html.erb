@@ -1,0 +1,21 @@
+  
+<%= form_tag tests_home_path do %>
+     <%#= @d = select_tag :search, :operating_company_name, placeholder: "Insert Service Company", class: "form-control" %>
+     <%= select_tag :operating_company_name[], options_for_select(@a.sort), {:include_blank => true, :multiple => true, :size =>10} %>
+     <%= submit_tag "Submit", class: "btn btn-primary" %>
+<% end %>
+
+
+
+
+ <br><br>
+  <div class="span3">
+    <table align="" border="1px" class="table table-striped">
+         <th>Operating Company</th>
+         <th>Number of Offshore Fields in the UK</th>
+      <% @execution.each_row() do |item| %>
+         <tr><td><%= item[0]  %></td>
+           <td><%= item[1]  %></td>
+      <% end %>
+    </table>
+</div>
