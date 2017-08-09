@@ -1,25 +1,22 @@
-
-
-
+<FORM><INPUT Type="button" VALUE="Back" onClick="history.go(-1);return true;"></FORM>
+<%= form_tag tests_test8_path do %>
+  <% if current_user %>
+    <h4>Hello, <%= current_user.name %></h4>
+    <h4>What contracts have been awarded for Service Company: </h4>
+    <%= text_field_tag :operating_company_name, nil, placeholder: "Insert Service Company Name" %>
+    <%= @a = submit_tag "Submit", class: "btn btn-primary" %>
+  <% end %>
+<% end %>
 <div class="page-header"><h3>Test 8</h3></div>
   <div class="span3">
     <table align="" border="1px" class="table table-striped">
-      
+      <th>Service Company</th>
       <th>Contract Name</th>
       <th>Contract Value</th>
-      
-   <tr><td><%#= @contracts.find(0) %></td>
-     <td><%#= @contracts.select %></td>
-
-
-      
-
-	<% @contracts.each_row do |row| %>
-	<tr><td><%= row[0]  %></td>
-		<td><%= row[1] %></td>
-		<% end %>
-        
-      
-    
+    	<% @contracts.each_row do |row| %>
+    	<tr><td><%= row[2] %></td>
+      <td><%= row[0]  %></td>
+		  <td><%= row[1] %></td>
+		  <% end %>
     </table>
 </div>

@@ -1,0 +1,30 @@
+<!-- View of the QUERY number 12 -->
+
+<FORM><INPUT Type="button" VALUE="Back" onClick="history.go(-1);return true;"></FORM>
+<%= form_tag tests_test12_path do %>
+  <% if current_user %>
+    <h3>Hello <%= current_user.name %>, check the latest operating company news:</h3>
+    <br>
+    <h4>Select your operating company from the list below</h4>
+    <%= collection_select(:operating, :project_id, @operating_companies, :id, :operating_company_name, {:prompt => true}) %>
+    <br><br>
+    <h4>Type in the name of your operating company</h4>
+    <%= text_field_tag :operating_company_name, nil, placeholder: "Insert Operating Company Name" %>
+    <%= submit_tag "Submit", class: "btn btn-primary" %>
+  <% end %>
+<% end %>
+<div class="page-header"><h3>The latest <%= params[:operating_company_name] %> news:</h3></div>
+ <div class="span3">
+  <table align="" border="1px" class="table table-striped">
+    <th>Operator Name</th>
+    <th>News Title</th>
+    <th>Date</th>
+    <th>Link</th>
+    <% @fields.each_row do |item| %>
+    <tr><td><%= item[0]  %></td>
+    <td><%= item[1]  %></td>
+    <td><%= item[2]  %></td>
+    <td><%= item[3]  %></td>
+    <% end %>
+  </table>
+</div>

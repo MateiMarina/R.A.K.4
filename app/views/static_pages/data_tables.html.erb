@@ -6,10 +6,10 @@
       </div>
 <div>
 <nav>
- 
+
 <ul class="nav nav-pills nav-stacked">
-     
-  <li><%= link_to "Assets",  items_path %></li>
+
+  <li><%= link_to "Asset",  items_path %></li>
   <li><%= link_to "Contracts",  contracts_path %></li>
   <li><%= link_to "Employees", employees_path %></li>
   <li><%= link_to "Locations", locations_path %></li>
@@ -17,20 +17,28 @@
   <li><%= link_to "Operating companies",  operatings_path %></li>
   <li><%= link_to "Projects", projects_path %></li>
   <li><%= link_to "News",  scraps_path %></li>
- 
-  <li><%= link_to "Subsea Service Company",  services_path %></li>
-  <li><%= link_to "Vessels Information",  vessels_path %></li>
+  <li><%= link_to "Companies", companies_path %></li>
+  <li><%= link_to "Subsea Service Companies",  services_path %></li>
+  <li><%= link_to "Vessels Info",  vessels_path %></li>
 
-  <li><%= link_to "Test 1", tests_test1_path %></li>
-  <li><%= link_to "Test 8", tests_test8_path %></li>
-  <li><%= link_to "Test 2", tests_test2_path %></li>
-  <li><%= link_to "Temporary", tests_temporary1_path %></li>
-  
-    
+  <h3>Queries</h3>
+  <li><%= link_to "1. Offshore Fields count by Current Operator", tests_test1_path %></li>
+  <li><%= link_to "2. How many fields an operating company have", tests_test2_path %></li>
+  <li><%= link_to "4. Contracts related to a certain project", tests_test4_path %></li>
+  <li><%= link_to "5. Fields where a certain stakeholder have interests in", tests_test5_path %></li>
+  <li><%= link_to "6. Operators connected to a stakeholder", tests_test6_path %></li>
+  <li><%= link_to "7. Which UKCS fields are less than 300m deep", tests_test7_path %></li>
+  <li><%= link_to "10. Company News", tests_test10_path %></li>
+  <li><%= link_to "12. Latest Operating Company News", tests_test12_path %></li>
+
+  <li><%= link_to "What contracts have been awarded to Service company", tests_test8_path %></li>
+  <li><%= link_to "Projects", tests_project_path %></li>
+
+
 </ul>
 </nav>
 </div>
 </div>
 </div>
-    
+
 </div>
