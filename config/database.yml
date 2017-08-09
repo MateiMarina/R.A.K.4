@@ -24,8 +24,8 @@ default: &default
   host: localhost
   #username: admin
   #password: admin
-  username: tony 
-  password: tony123
+  username: matteo
+  password:
 
   #username: matei
   #password: matei1986
@@ -38,7 +38,7 @@ default: &default
 
 development:
   <<: *default
-  database: data_scrape_development
+  database: data_scraper1_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -72,7 +72,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: data_scrape_test
+  database: data_scraper1_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -95,6 +95,6 @@ test:
 #
 production:
   <<: *default
-  database: data_scrape_production
+  database: data_scraper1_production
   username: data_scraper
   password: <%= ENV['DATA_SCRAPER_DATABASE_PASSWORD'] %>

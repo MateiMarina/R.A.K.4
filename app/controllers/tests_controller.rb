@@ -10,7 +10,7 @@ class TestsController < ApplicationController
 
     def test2
     require 'pg'
-      @operating_companies=Operating.all
+      @operating_companies=Company.where(:company_type => 'operating')
       db = PG.connect(dbname: 'data_scraper1_development', user: 'matteo', password: '')
       # HEROKU VARIABLES TO HIDE THE ABOVE SENSITIVE INFO -> TO DO
       @assets = db.exec("SELECT * from query2('#{params[:operating]}')")

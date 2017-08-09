@@ -6,7 +6,7 @@
     <h3>Hello <%= current_user.name %>, check how many fields an operating company have</h3>
     <br>
     <h4>Select the operating company from the list below</h4>
-    <%= collection_select(:operating, :company_id, @operating_companies, :id, :operating_company_name, {:prompt => true}) %>
+    <%= collection_select(:company_name, :id, @operating_companies, :id, :company_name, {:prompt => true}) %>
     <br><br>
     <h4>Type in the operating company</h4>
     <%= text_field_tag :operating, nil, placeholder: "Insert Operating Company" %>
