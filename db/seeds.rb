@@ -24,5 +24,6 @@ User.create!(name:  "Ross Macdonald",
               password_confirmation: "Archer_admin1",
               admin: true,
               activated: true,
-              activated_at: Time.zone.now)
+              activated_at: Time.zone.now) 
+              
               
