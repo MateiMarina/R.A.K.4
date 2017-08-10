@@ -1,7 +1,12 @@
+<!-- VIEW OF THE QUERY 8 -->
+
+<!-- Form where type in the parameter :operating_company_name -->
 <FORM><INPUT Type="button" VALUE="Back" onClick="history.go(-1);return true;"></FORM>
-<%= form_tag tests_test8_path do %>
+<%= form_tag queries_query8_path do %>
   <% if current_user %>
+
     <h4>Hello, <%= current_user.name %></h4>
+
     <h4>What contracts have been awarded for Service Company: </h4>
     <%= text_field_tag :operating_company_name, nil, placeholder: "Insert Service Company Name" %>
     <%= @a = submit_tag "Submit", class: "btn btn-primary" %>

@@ -1,0 +1,38 @@
+<!-- VIEW OF THE QUERY 4 -->
+
+<!-- Form where type in the parameter :project_name -->
+<FORM><INPUT Type="button" VALUE="Back" onClick="history.go(-1);return true;"></FORM>
+<%= form_tag queries_query4_path do %>
+  <% if current_user %>
+
+    <h3>Hello <%= current_user.name %>, check which contracts are related to your project</h3><br><!-- welcome message -->
+    <!-- <%= current_user.name %> shows the current user in  the welcome message -->
+
+    <h4>Select the project from the list below</h4>
+    <%= collection_select(:project, :project_id, @project_titles, :id, :project_title, {:prompt => true}) %><br><br><!-- drop down projects menu -->
+
+    <h4>Type in the project name</h4>
+    <%= text_field_tag :project_name, nil, placeholder: "Insert Project Name" %><!-- 'insert project name' field -->
+    <%= submit_tag "Submit", class: "btn btn-primary" %> <!-- form submit button -->
+  <% end %>
+<% end %>
+<br>
+<h3>Contracts related to <%= params[:project_name] %>:</h3>
+<!-- params[:project_name] allows the title to be matched accordingly with the company name selected -->
+
+<!-- table showing query outcomes -->
+<br>
+<div class="span3">
+  <table align="" border="1px" class="table table-striped">
+   <th>Contract name</th>
+   <th>Project title</th>
+   <th>Contract status</th>
+   <th>Services rendered</th>
+   <% @contracts.each_row() do |item| %>
+   <tr><td><%= item[0]  %></td>
+   <td><%= item[1]  %></td>
+   <td><%= item[2]  %></td>
+   <td><%= item[3]  %></td>
+   <% end %>
+  </table>
+</div>

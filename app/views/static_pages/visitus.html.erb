@@ -1,52 +1,40 @@
-<FORM><INPUT Type="button" VALUE="Back" onClick="history.go(-1);return true;"></FORM>
+<!-- <FORM><INPUT Type="button" VALUE="Back" onClick="history.go(-1);return true;"></FORM> -->
 
-		<div class= "same">
+<h1>Visit Us</h1>
 
-      <h1 style="color: #5B5D62">Visit Us</h1>
+	<div class='visitus'>
+		<div class ='col-md-4'>
+		</div>
 
-    </div>
- 
-	<div class='row'>
-	<div class='col-md-12'>
-	 
-		<p>7 Carden Place</p>
-		<p>Aberdeen</p>
-		<p>AB10 1PP</p>
-    </div>
-  </div>
-  
-  <!-- Google Map --> 
-  	<div class='row'>
-    <div class ='col-md-12'>             
-                <div id="map">
-                	
-                </div>
+		<div class ='col-md-2'>
+			<h3>7 Carden Place<br>
+			Aberdeen<br>
+			AB10 1PP</h3>
+		</div>
 
-                        <style>
-                      #map {
-                       margin: 0 auto 0 auto;
-                       width: 400px;
-                       height: 400px;
-                     
-                       }
-                  </style>
-    
-            <script>
-        function initMap() {
-          var uluru = {lat: 57.1446107, lng: -2.1213499};
-          var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 14,
-            center: uluru
-          });
-          var marker = new google.maps.Marker({
-            position: uluru,
-            map: map
-          });
-        }  
-      </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyNk4-Hij-eckCVwxdp9kDbqKp6FQN4Js&callback=initMap">
-    </script> 
-          
-</div>
-</div>
+		<!-- Google Map -->
+
+			<div class ='col-md-5'>
+				<div id="map">
+					<script>
+					function initMap() {
+						var uluru = {lat: 57.1446107, lng: -2.1213499};
+						var map = new google.maps.Map(document.getElementById('map'), {
+							zoom: 14,
+							center: uluru
+						});
+						var marker = new google.maps.Marker({
+							position: uluru,
+							map: map
+						});
+					}
+				</script>
+				<script async defer
+					src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyNk4-Hij-eckCVwxdp9kDbqKp6FQN4Js&callback=initMap">
+				</script>
+
+				<div class ='col-md-1'>
+				</div>
+			</div>
+		</div>
+	</div>
