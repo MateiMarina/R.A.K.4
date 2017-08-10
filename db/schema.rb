@@ -15,38 +15,6 @@ ActiveRecord::Schema.define(version: 20170727150417) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "admins", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.inet     "current_sign_in_ip"
-    t.inet     "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.string   "username"
-    t.index ["email"], name: "index_admins_on_email", unique: true, using: :btree
-    t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
-    t.index ["username"], name: "index_admins_on_username", unique: true, using: :btree
-  end
-
-  create_table "assets", force: :cascade do |t|
-    t.integer  "asset_id"
-    t.string   "asset_name"
-    t.string   "asset_type"
-    t.string   "asset_owner"
-    t.string   "country"
-    t.string   "current_manager"
-    t.string   "previous_manager"
-    t.string   "asset_specifications"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
-  end
-
   create_table "companies", force: :cascade do |t|
     t.string   "company_type"
     t.datetime "created_at",   null: false
@@ -217,21 +185,10 @@ ActiveRecord::Schema.define(version: 20170727150417) do
     t.text     "capex_usd"
     t.text     "development_concept"
     t.text     "distance_to_shore"
-    t.integer  "contract_id"
     t.integer  "location_id"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
-    t.index ["contract_id"], name: "index_projects_on_contract_id", using: :btree
     t.index ["location_id"], name: "index_projects_on_location_id", using: :btree
-  end
-
-  create_table "purchasers", force: :cascade do |t|
-    t.integer  "purchaser_id"
-    t.string   "purchaser_name"
-    t.string   "company_type"
-    t.string   "services_rendered"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
   end
 
   create_table "scraps", force: :cascade do |t|
@@ -294,18 +251,6 @@ ActiveRecord::Schema.define(version: 20170727150417) do
     t.datetime "updated_at",    null: false
   end
 
-  create_table "workers", force: :cascade do |t|
-    t.integer  "worker_id"
-    t.string   "full_name"
-    t.string   "classification"
-    t.string   "company_type"
-    t.text     "ak_notes"
-    t.text     "current_company"
-    t.string   "current_country"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
-
   add_foreign_key "company_contracts", "companies"
   add_foreign_key "company_contracts", "contracts"
   add_foreign_key "company_employees", "companies"
@@ -326,7 +271,6 @@ ActiveRecord::Schema.define(version: 20170727150417) do
   add_foreign_key "operating_projects", "projects"
   add_foreign_key "operatings", "companies"
   add_foreign_key "operatings", "locations"
-  add_foreign_key "projects", "contracts"
   add_foreign_key "projects", "locations"
   add_foreign_key "services", "companies"
   add_foreign_key "services", "locations"
