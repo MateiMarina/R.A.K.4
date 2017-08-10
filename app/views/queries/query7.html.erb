@@ -1,0 +1,32 @@
+<!-- VIEW OF THE QUERY 7 -->
+
+<!-- Form where type in the parameter :operating -->
+<FORM><INPUT Type="button" VALUE="Back" onClick="history.go(-1);return true;"></FORM>
+<%= form_tag queries_query7_path do %>
+  <% if current_user %>
+
+    <h3>Hello <%= current_user.name %>, check which UKCS fields are less than <%= params[:water_depth] %>m deep:</h3><br><!-- welcome message -->
+    <!-- <%= current_user.name %> shows the current user in  the welcome message -->
+
+    <h4>Type in water_depth</h4>
+    <%= text_field_tag :water_depth, nil, placeholder: "Insert Water Depth" %><!-- 'insert water_depth' field -->
+    <%= submit_tag "Submit", class: "btn btn-primary" %><!-- form submit button -->
+
+  <% end %>
+
+    <div class="span3">
+      <table align="" border="1px" class="table table-striped">
+       <th>UK offshore field</th>
+       <th>Water Depth</th>
+       <th>Offshore owner</th>
+       <th>Supra region<th>
+       <% @water_depth.each_row() do |item| %><!-- @water_depth stores all the data I want to show and it is in the form of a table list -->
+       <tr><td><%= item[0]  %></td>           <!-- retrieve the first attribute -->
+       <td><%= item[1]  %></td>               <!-- retrieve the second attribute -->
+       <td><%= item[2]  %></td>               <!-- retrieve the third attribute -->
+       <td><%= item[3]  %></td>               <!-- retrieve the fourth attribute -->
+       <% end %>
+      </table>
+    </div>
+    <% end %>
+  <% end %>

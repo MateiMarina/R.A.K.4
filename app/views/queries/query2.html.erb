@@ -1,0 +1,39 @@
+<!-- VIEW OF THE QUERY 2 -->
+
+<!-- Form where type in the parameter :operating -->
+<FORM><INPUT Type="button" VALUE="Back" onClick="history.go(-1);return true;"></FORM>
+<%= form_tag queries_query2_path do %>
+  <% if current_user %>
+
+    <h3>Hello <%= current_user.name %>, check how many fields an operating company have</h3><br><!-- welcome message -->
+    <!-- <%= current_user.name %> shows the current user in  the welcome message -->
+
+    <h4>Select the operating company from the list below</h4>
+    <%= collection_select(:company_name, :id, @operating_companies, :id, :company_name, {:prompt => true}) %><br><br><!-- drop down operating companies menu -->
+
+    <h4>Type in the operating company</h4>
+    <%= text_field_tag :operating, nil, placeholder: "Insert Operating Company" %><!-- 'insert operating company' field -->
+    <%= submit_tag "Submit", class: "btn btn-primary" %> <!-- form submit button -->
+
+  <% end %>
+<% end %>
+<br>
+
+<h3>Contracts related to <%= params[:operating] %>:</h3><br>
+<!-- params[:operating] allows the title to be matched accordingly with the company name selected -->
+
+<!-- table showing query outcomes -->
+<div class="span3">
+  <table align="" border="1px" class="table table-striped">
+   <th>Field name</th>
+   <th>Field status</th>
+   <th>Original operator</th>
+   <th>Service rendered</th>            
+   <% @assets.each_row() do |item| %>   <!-- @assets stores all the data I want to show and it is in the form of a table list -->
+   <tr><td><%= item[0]  %></td>         <!-- retrieve the first attribute -->
+   <td><%= item[1]  %></td>             <!-- retrieve the second attribute -->
+   <td><%= item[2]  %></td>             <!-- retrieve the third attribute -->
+   <td><%= item[3]  %></td>             <!-- retrieve the fourth attribute -->
+   <% end %>
+  </table>
+</div>

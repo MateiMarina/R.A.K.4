@@ -1,0 +1,36 @@
+<!-- VIEW OF THE QUERY 6 -->
+
+<!-- Form where type in the parameter :operating -->
+<FORM><INPUT Type="button" VALUE="Back" onClick="history.go(-1);return true;"></FORM>
+<%= form_tag queries_query6_path do %>
+  <% if current_user %>
+
+    <h3>Hello <%= current_user.name %>, check which operators are connected to a stakeholder</h3><br><!-- welcome message -->
+    <!-- <%= current_user.name %> shows the current user in  the welcome message -->
+
+    <h4>Select your stakeholder from the list below</h4>
+    <%= collection_select(:stakeholder, :offshore_id, @stakeholders, :id, :stakeholder_name, {:prompt => true}) %><!-- drop down stakeholders menu -->
+    <br><br>
+
+    <h4>Type in the name of your stakeholder</h4>
+    <%= text_field_tag :stakeholder_name, nil, placeholder: "Insert Stakeholder Name" %><!-- 'insert stakeholder' field -->
+    <%= submit_tag "Submit", class: "btn btn-primary" %> <!-- form submit button -->
+
+  <% end %>
+<% end %>
+<br>
+
+<h3>Operators connected to <%= params[:stakeholder_name] %></h3><br>
+<!-- params[:stakeholder_name] allows the title to be matched accordingly with the company name selected -->
+
+<!-- table showing query outcomes -->
+<div class="span3">
+  <table align="" border="1px" class="table table-striped">
+   <th>Stakeholder name</th>
+   <th>Operating company name</th>
+   <% @operators.each_row() do |item| %><!-- @operators stores all the data I want to show and it is in the form of a table list -->
+   <tr><td><%= item[0]  %></td>         <!-- retrieve the first attribute -->
+   <td><%= item[1]  %></td>             <!-- retrieve the second attribute -->
+   <% end %>
+  </table>
+</div>
