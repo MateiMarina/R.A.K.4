@@ -21,7 +21,7 @@ class QueriesController < ApplicationController
 
     def query4
 		  require 'pg'
-      @project_titles=Project.all
+      @project_titles=Project.order('id ASC')
 		  db = PG.connect(dbname: 'data_scraper1_development', user: 'matteo', password: '')
 		  # HEROKU VARIABLES TO HIDE THE ABOVE SENSITIVE INFO -> TO DO
 		  @contracts = db.exec("SELECT * from query4('#{params[:project_name]}')")
