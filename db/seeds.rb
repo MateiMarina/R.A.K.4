@@ -16,14 +16,24 @@
 #               activated: true,
 #               activated_at: Time.zone.now)
 
-User.create!(name:  "Ross Macdonald",
-              email: "rma@archerknight.com",
+# User.create!(name:  "Ross Macdonald",
+#               email: "rma@archerknight.com",
+#               surname: "test",
+#               company: "Archer Knight",
+#               password:              "Archer_admin1",
+#               password_confirmation: "Archer_admin1",
+#               admin: true,
+#               activated: true,
+#               activated_at: Time.zone.now) 
+
+User.create!(name:  "Lynne Paterson",
+              email: "lpa@archerknight.com",
               surname: "test",
               company: "Archer Knight",
-              password:              "Archer_admin1",
-              password_confirmation: "Archer_admin1",
+              password:              "Archer_admin2",
+              password_confirmation: "Archer_admin2",
               admin: true,
               activated: true,
-              activated_at: Time.zone.now) 
+              activated_at: Time.zone.now)
               
               
