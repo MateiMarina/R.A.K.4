@@ -1,7 +1,42 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
 
-two:
-  name: MyString
+# one:
+ 
+#   field_name: MyString
+#   field_status: MyString
+#   original_operator: MyString
+#   current_operator: MyString
+#   discovery_yr: MyText
+#   resource: MyText
+#   field_size_boe: MyText
+#   first_production_yr: MyText
+#   estimated_end_production: MyText
+#   field_life_yrs: MyText
+#   water_depth: MyText
+#   capex_usd: MyText
+#   distance_to_shore_km: MyText
+#   no_manifolds: MyText
+#   no_intalled_trees: MyText
+
+# two:
+ 
+#   field_name: MyString
+#   field_status: MyString
+#   original_operator: MyString
+#   current_operator: MyString
+#   discovery_yr: MyText
+#   resource: MyText
+#   field_size_boe: MyText
+#   first_production_yr: MyText
+#   estimated_end_production: MyText
+#   field_life_yrs: MyText
+#   water_depth: MyText
+#   capex_usd: MyText
+#   distance_to_shore_km: MyText
+#   no_manifolds: MyText
+#   no_intalled_trees: MyText
+  
+  
+  
+  

@@ -1,38 +1,19 @@
 require 'test_helper'
 
 class ItemsControllerTest < ActionDispatch::IntegrationTest
-  test "should get index" do
-    get items_index_url
-    assert_response :success
-  end
-
-  test "should get show" do
-    get items_show_url
-    assert_response :success
-  end
-
+  
   test "should get new" do
-    get items_new_url
+    get new_item_path  
     assert_response :success
   end
 
-  test "should get create" do
-    get items_create_url
+  test "should data table" do
+    get static_pages_data_tables_path
     assert_response :success
   end
 
-  test "should get edit" do
-    get items_edit_url
-    assert_response :success
-  end
-
-  test "should get update" do
-    get items_update_url
-    assert_response :success
-  end
-
-  test "should get destroy" do
-    get items_destroy_url
+  test "should Vessels path" do
+    get vessels_path  
     assert_response :success
   end
 
