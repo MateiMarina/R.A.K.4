@@ -11,4 +11,18 @@ class LocationsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+
+  test "can create an location" do
+  get new_location_path
+  assert_response :success
+ 
+#   post create,
+#     params: { location: { country: "can create", supra_region: "article successfully."  region:"UK"} }
+
+#   assert_response :success
+  
+   end
 end
+
+
+        
