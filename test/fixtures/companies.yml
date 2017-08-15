@@ -2,6 +2,9 @@
 
 one:
   company_type: MyString
-
+  company_name: MyString
+  
 two:
   company_type: MyString
+  company_name: Mystring
+
