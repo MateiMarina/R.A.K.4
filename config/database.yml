@@ -26,7 +26,7 @@ default: &default
   password: admin
   username:
   password:
-  username:
+  username: Stuart
   password:
   #username: matei
   #password: matei1986
