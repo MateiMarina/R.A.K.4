@@ -6,6 +6,6 @@ class OffshoresControllerTest < ActionDispatch::IntegrationTest
   #   assert_response :success
   # end
 
-
+  
 
 end

@@ -22,12 +22,27 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   template: template0
   host: localhost
+
+  #username: admin
+  #password: admin
+  # username: tony
+  # password: tony123
+
+
   username: admin
   password: admin
+<<<<<<< HEAD
   username:
   password:
   username: Stuart
   password:
+=======
+  # username:
+  # password:
+  # username:
+  # password:
+
+>>>>>>> dcf18127066b0cf71df050153e4b82104752791d
   #username: matei
   #password: matei1986
   # HEROKU VARIABLES TO HIDE THE ABOVE SENSITIVE INFO -> TO DO
@@ -39,7 +54,7 @@ default: &default
 
 development:
   <<: *default
-  database: final_project
+  database: data_scraper1_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -73,7 +88,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: final_project_test
+  database: data_scraper1_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -96,6 +111,6 @@ test:
 #
 production:
   <<: *default
-  database: final_project_production
+  database: data_scraper1_production
   username: data_scraper
   password: <%= ENV['DATA_SCRAPER_DATABASE_PASSWORD'] %>

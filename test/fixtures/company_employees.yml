@@ -1,14 +1,14 @@
-# # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-#
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
 # one:
 #   company: one
 #   employee: one
 #   begin: MyText
 #   end: MyText
-#
+
 # two:
 #   company: two
 #   employee: two
 #   begin: MyText
 #   end: MyText
-#
+

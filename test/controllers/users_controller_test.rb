@@ -5,5 +5,5 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     get users_new_path
     assert_response :success
   end
-
+  
 end

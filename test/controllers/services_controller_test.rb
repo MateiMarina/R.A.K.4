@@ -7,7 +7,7 @@ class ServicesControllerTest < ActionDispatch::IntegrationTest
   # end
 
   test "should get new" do
-    get new_service_path
+    get new_service_path 
     assert_response :success
   end
 

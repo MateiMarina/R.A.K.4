@@ -10,7 +10,5 @@ class CompaniesControllerTest < ActionDispatch::IntegrationTest
     get static_pages_data_tables_path
     assert_response :success
   end
-
-
-
+  
 end

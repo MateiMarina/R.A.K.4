@@ -10,7 +10,7 @@ one:
   incumbent_irm_contractor: MyString
   irm_frame_agreements: MyString
   estimated_irm_budget: MyText
-
+  
 
 two:
   operating_company_name: MyString
@@ -22,3 +22,4 @@ two:
   incumbent_irm_contractor: MyString
   irm_frame_agreements: MyString
   estimated_irm_budget: MyText
+  
