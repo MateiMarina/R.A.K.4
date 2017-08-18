@@ -4,7 +4,8 @@
   <% if current_user.admin? && !current_user?(user) %>
     | <%= link_to "Delete Account", user, method: :delete,
                                   data: { confirm: "You sure?" } %> | 
-      <%= link_to "Edit user details", edit_user_path(current_user) %> | 
+      <%= link_to "Edit user details", user, method: :edit
+         %> | 
       <%= link_to "Restrict User Access", "#" %>
   <% end %>
 </li>
