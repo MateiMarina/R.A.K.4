@@ -3,9 +3,9 @@
 one:
   title: MyString
   link: MyText
-  news_date: 2017-07-18
+  day: 2017-07-18
 
 two:
   title: MyString
   link: MyText
-  news_date: 2017-07-18
+  day: 2017-07-18

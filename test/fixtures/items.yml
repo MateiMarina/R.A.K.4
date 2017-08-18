@@ -7,7 +7,7 @@ one:
   current_manager: MyString
   previous_manager: MyString
   item_specifications: MyText
-  location: one
+
 
 two:
   item_name: MyString
@@ -16,4 +16,3 @@ two:
   current_manager: MyString
   previous_manager: MyString
   item_specifications: MyText
-  location: two

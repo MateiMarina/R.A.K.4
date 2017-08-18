@@ -1,39 +1,27 @@
 require 'test_helper'
 
 class EmployeesControllerTest < ActionDispatch::IntegrationTest
-  test "should get index" do
-    get employees_index_url
+
+  test "should data table" do
+    get static_pages_data_tables_path
     assert_response :success
   end
 
-  test "should get show" do
-    get employees_show_url
-    assert_response :success
-  end
 
-  test "should get new" do
-    get employees_new_url
-    assert_response :success
-  end
+# test "should create new record" do
+#     get new_employee_path
+#     assert_response :success
+#     assert_difference "Employee.count" do
+#     post employees_path employee:  {  full_name: "Jenny", current_company: "Shell", country: "UK",  position: "Analyst", ak_notes: "N/A", classification: "N/A" }
+#   end
+#   assert_redirect_to employees_path
+#   end
 
-  test "should get create" do
-    get employees_create_url
-    assert_response :success
-  end
 
-  test "should get edit" do
-    get employees_edit_url
-    assert_response :success
-  end
-
-  test "should get update" do
-    get employees_update_url
-    assert_response :success
-  end
-
-  test "should get destroy" do
-    get employees_destroy_url
-    assert_response :success
-  end
-
+#   test "if not create in the database" do
+#   assert_no_difference "Employee.count" do
+#   post employees_path employee:  {  full_name: " ", current_company: " ", country: " ",  position: " ", ak_notes: " ", classification: " " }
+#   end
+#   assert_template 'new'
+#   end
 end

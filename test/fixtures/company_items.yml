@@ -1,9 +1,9 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  company: one
-  item: one
-
-two:
-  company: two
-  item: two
+# # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+#
+# one:
+#   company: one
+#   item: one
+#
+# two:
+#   company: two
+#   item: two
