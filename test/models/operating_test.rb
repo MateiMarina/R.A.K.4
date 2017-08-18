@@ -59,5 +59,4 @@ class OperatingTest < ActiveSupport::TestCase
   end
   
   
-  
 end

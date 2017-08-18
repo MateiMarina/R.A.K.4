@@ -16,4 +16,10 @@ class EmployeesControllerTest < ActionDispatch::IntegrationTest
   #   assert_response :success
   # end
 
+#   test "if not create in the database" do
+#   assert_no_difference "Employee.count" do
+#   post employees_path employee:  {  full_name: " ", current_company: " ", country: " ",  position: " ", ak_notes: " ", classification: " " }
+#   end
+#   assert_template 'new'
+#   end
 end

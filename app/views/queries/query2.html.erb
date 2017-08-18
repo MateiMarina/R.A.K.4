@@ -19,7 +19,7 @@
 <% end %>
 <br>
 
-<h3>Contracts related to <%= params[:operating] %>:</h3><br>
+<h3>Fields related to <%= params[:operating] %>:</h3><br>
 <!-- params[:operating] allows the title to be matched accordingly with the company name selected -->
 
 <!-- table showing query outcomes -->
@@ -28,7 +28,7 @@
    <th>Field name</th>
    <th>Field status</th>
    <th>Original operator</th>
-   <th>Service rendered</th>            
+   <th>Service rendered</th>
    <% @assets.each_row() do |item| %>   <!-- @assets stores all the data I want to show and it is in the form of a table list -->
    <tr><td><%= item[0]  %></td>         <!-- retrieve the first attribute -->
    <td><%= item[1]  %></td>             <!-- retrieve the second attribute -->

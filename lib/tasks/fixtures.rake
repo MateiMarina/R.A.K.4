@@ -20,4 +20,8 @@ namespace :fixtures do
         end
     end
   end
+<<<<<<< HEAD
 end
+=======
+end
+>>>>>>> 021b60f0db8a0796810d9d898958ffb47b5561bb

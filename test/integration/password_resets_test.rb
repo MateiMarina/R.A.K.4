@@ -6,7 +6,11 @@ class PasswordResetsTest < ActionDispatch::IntegrationTest
   #   ActionMailer::Base.deliveries.clear
   #   @user = users(:ArcherKnight)
   # end
+<<<<<<< HEAD
 
+=======
+  #
+>>>>>>> 021b60f0db8a0796810d9d898958ffb47b5561bb
   # test "password resets" do
   #   get new_password_reset_path
   #   assert_template 'password_resets/new'
@@ -16,7 +20,11 @@ class PasswordResetsTest < ActionDispatch::IntegrationTest
   #   assert_template 'password_resets/new'
   #   # Valid email
   #   post password_resets_path,
+<<<<<<< HEAD
   #       params: { password_reset: { email: @user.email } }
+=======
+  #        params: { password_reset: { email: @user.email } }
+>>>>>>> 021b60f0db8a0796810d9d898958ffb47b5561bb
   #   assert_not_equal @user.reset_digest, @user.reload.reset_digest
   #   assert_equal 1, ActionMailer::Base.deliveries.size
   #   assert_not flash.empty?
@@ -59,4 +67,8 @@ class PasswordResetsTest < ActionDispatch::IntegrationTest
   #   assert_not flash.empty?
   #   assert_redirected_to user
   # end
+<<<<<<< HEAD
 end
+=======
+end
+>>>>>>> 021b60f0db8a0796810d9d898958ffb47b5561bb
