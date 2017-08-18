@@ -24,9 +24,9 @@
 #               password_confirmation: "Archer_admin1",
 #               admin: true,
 #               activated: true,
-#               activated_at: Time.zone.now) 
+#               activated_at: Time.zone.now)
 
-User.create!(name:  "Lynne Paterson",
+User.create!(name:  "LynneAK",
               email: "lpa@archerknight.com",
               surname: "test",
               company: "Archer Knight",
@@ -35,5 +35,3 @@ User.create!(name:  "Lynne Paterson",
               admin: true,
               activated: true,
               activated_at: Time.zone.now)
-              
-              

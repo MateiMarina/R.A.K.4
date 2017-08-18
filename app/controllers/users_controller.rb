@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
-  before_action :correct_user,   only: [:edit, :update]
+  # before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user,     only: :destroy
   before_action :require_login, only: [:index, :edit, :update, :destroy], raise: false
 
@@ -81,12 +81,12 @@ class UsersController < ApplicationController
 
 
 
-   
+
    #security feature
      def require_login
         unless logged_in?
           flash[:danger] = "You must login to access this page"
-            redirect_to login_path 
+            redirect_to login_path
         end
      end
 
