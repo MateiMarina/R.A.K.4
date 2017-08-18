@@ -75,6 +75,6 @@ class CompaniesController < ApplicationController
               flash[:danger] = "You must login to access this page"
               redirect_to login_path 
             end
-        end
+         end
     
 end
