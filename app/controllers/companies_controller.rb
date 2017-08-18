@@ -26,7 +26,7 @@ class CompaniesController < ApplicationController
              @company = Company.new(comy)
             if  @company.save
                 flash[:success] = "A record has been successfully added"
-            redirect_to locations_path
+            redirect_to companies_path
             else
               render 'new'
             end
@@ -53,7 +53,7 @@ class CompaniesController < ApplicationController
             @company = Company.find(params[:id])
             if  @location.update_attributes(located)
                flash[:success] = "Location form updated"
-               redirect_to locations_path
+               redirect_to companies_path
             else
                 render'edit'
             end
@@ -65,7 +65,7 @@ class CompaniesController < ApplicationController
         def destroy
             Company.find(params[:id]).destroy
             flash[:success] = "A record has been successfully deleted"
-            redirect_to locations_path
+            redirect_to companies_path
         end
         
         
@@ -75,6 +75,6 @@ class CompaniesController < ApplicationController
               flash[:danger] = "You must login to access this page"
               redirect_to login_path 
             end
-        end
+         end
     
 end

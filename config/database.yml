@@ -25,16 +25,16 @@ default: &default
 
   #username: admin
   #password: admin
-  username: tony
-  password: tony123
+  # username: tony
+  # password: tony123
 
 
   username: admin
   password: admin
-  username:
-  password:
-  username:
-  password:
+  # username:
+  # password:
+  # username:
+  # password:
 
   #username: matei
   #password: matei1986
