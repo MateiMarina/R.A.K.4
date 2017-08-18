@@ -26,7 +26,8 @@ default: &default
   password: admin
   username:
   password:
-
+  username:
+  password:
   #username: matei
   #password: matei1986
   # HEROKU VARIABLES TO HIDE THE ABOVE SENSITIVE INFO -> TO DO
@@ -38,7 +39,7 @@ default: &default
 
 development:
   <<: *default
-  database: data_scraper1_development
+  database: final_project
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
