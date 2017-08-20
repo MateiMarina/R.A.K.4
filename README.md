@@ -1,24 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To run this application you will need the following:
 
-Things you may want to cover:
+* Ruby
 
-* Ruby version
+* Rails
 
-* System dependencies
+* PostgreSQL
 
-* Configuration
+* PG admin 3
 
-* Database creation
+To install the application follow the below steps:
 
-* Database initialization
+Install the above programs using a terminal
 
-* How to run the test suite
+Initialise the database by creating a new database in pgadmin then use the restore function on the rak4_database
 
-* Services (job queues, cache servers, search engines, etc.)
+Add postgresql username and password to database.yml file and save
+  (default username: postgres password: )
 
-* Deployment instructions
-
-* ...
+Run the application on a local rails server or deploy to a host (eg Heroku)

@@ -8,6 +8,14 @@ class UsersController < ApplicationController
     @users = User.paginate(page: params[:page])
   end
 
+  helpers do #protects designated aspects of the application from unauthorised access. E.g edit / admin control pages.
+      def protected!
+          if authorized?
+              return
+          end
+          redirect '/denied'
+      end
+    end
   def new
   	@user = User.new
   end
